@@ -1,0 +1,73 @@
+{
+  "scope": "tooling fixture only; not VERVO application acceptance",
+  "stats": {
+    "startTime": "2026-11-12T04:36:01.598Z",
+    "duration": 14652.719,
+    "expected": 12,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserVersions": {
+    "chromium-desktop": "158.0.8127.18",
+    "chromium-mobile": "158.0.8127.18",
+    "firefox-desktop": "159.0",
+    "webkit-desktop": "27.2"
+  },
+  "screenshots": {
+    "chromium-desktop.png": {
+      "width": 1440,
+      "height": 1000,
+      "sha256": "2aa9f37b17c2e377c4419dfc3e764c9d8914ddeb667e02bf558f9fb1f2671001"
+    },
+    "chromium-mobile.png": {
+      "width": 390,
+      "height": 844,
+      "sha256": "750110a70a8370ee4709ad69dce48afcfb289e3fd7dc52fb366581cc7d44b117"
+    },
+    "firefox-desktop.png": {
+      "width": 1440,
+      "height": 1000,
+      "sha256": "78c873b3d4deffd588302121112092fcc577e09d9258737a1cffbfc329d232bd"
+    },
+    "webkit-desktop.png": {
+      "width": 2880,
+      "height": 2000,
+      "sha256": "beb9b06321f6d8248a4494b59020b903fd9338eb57c42cf9f509bcf594b62dd9"
+    }
+  },
+  "manuallyInspected": [
+    "chromium-desktop.png",
+    "chromium-mobile.png"
+  ],
+  "checks": [
+    "browser launch",
+    "JavaScript interaction",
+    "keyboard",
+    "reduced motion preference in fixture",
+    "viewport widths 320/390/768/1024/1440",
+    "no cookies",
+    "no external page requests",
+    "env path returns 404"
+  ],
+  "cleanRestore": {
+    "npmCi": "passed",
+    "pinnedEngineDownloadAndChecksum": "passed",
+    "setupIntegrity": "passed"
+  },
+  "runtime": {
+    "node": "24.22.1",
+    "npm": "11.9.0",
+    "git": "2.52.0",
+    "python": "3.12.14",
+    "system": "Debian 13 amd64"
+  },
+  "limitations": [
+    "No VERVO application implemented",
+    "No real microphone, AI, authentication or payments tested",
+    "No Claude Code runtime available",
+    "Figma deferred by user",
+    "Original reference markdown missing",
+    "No shared external preview URL verified"
+  ]
+}

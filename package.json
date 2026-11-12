@@ -1,0 +1,27 @@
+{
+  "name": "vervo-project-preparation",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Preparación de herramientas de VERVO. La aplicación aún no está implementada.",
+  "type": "module",
+  "engines": { "node": ">=24 <25", "npm": ">=11 <12" },
+  "packageManager": "npm@11.9.0",
+  "scripts": {
+    "setup:check": "node scripts/verify-setup.mjs",
+    "tools:prepare": "node scripts/prepare-impeccable.mjs",
+    "tools:context": "node scripts/impeccable-skill.mjs context",
+    "browsers:install": "node scripts/playwright.mjs install chromium firefox webkit",
+    "browsers:deps:debian": "python3 scripts/install-debian-browser-libs.py",
+    "test": "node scripts/playwright.mjs test",
+    "test:setup": "node scripts/playwright.mjs test --project=chromium-desktop --project=chromium-mobile",
+    "test:report": "node scripts/playwright.mjs show-report work/playwright-report",
+    "preview:setup": "node scripts/serve-setup.mjs --host=0.0.0.0",
+    "skills:emil": "skills add https://github.com/emilkowalski/skills/tree/4061b67b8d976a186aca118594f54b638c5f718a --skill emil-design-eng choreograph review-animations animation-performance --agent claude-code --copy --yes",
+    "skills:impeccable": "node scripts/impeccable.mjs install --providers=claude --scope=project"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.65.0",
+    "impeccable": "4.8.2",
+    "skills": "1.8.1"
+  }
+}

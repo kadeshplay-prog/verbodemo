@@ -1,0 +1,42 @@
+{
+  "description": "Impeccable design detector: immediate-tier checks after Edit/Write on UI files, full-rule deep pass on Stop.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/work/impeccable\" IMPECCABLE_LIVE_COPY_AGENT=chat DO_NOT_TRACK=1 \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 5,
+            "statusMessage": "Preparing build session"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/work/impeccable\" IMPECCABLE_LIVE_COPY_AGENT=chat DO_NOT_TRACK=1 \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 5,
+            "statusMessage": "Checking UI changes"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "IMPECCABLE_HOME=\"${CLAUDE_PROJECT_DIR}/work/impeccable\" IMPECCABLE_LIVE_COPY_AGENT=chat DO_NOT_TRACK=1 \"${CLAUDE_PROJECT_DIR}/.claude/skills/impeccable/scripts/impeccable\" hook",
+            "timeout": 30,
+            "statusMessage": "Design deep pass"
+          }
+        ]
+      }
+    ]
+  }
+}

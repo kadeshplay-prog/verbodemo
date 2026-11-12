@@ -1,0 +1,967 @@
+DIRECCIÓN CREATIVA · EXPERIENCIA · CONTENIDO
+
+
+Brief visual y de contenido
+Plataforma de conversación en inglés
+Proyecto de Kadesh | Versión 1.1 | 11 de noviembre de 2026
+
+Decisión creativa
+Crear una experiencia editorial contemporánea con un estudio de conversación como centro del
+producto. La web debe transmitir claridad, confianza y energía. La identidad combina fondos cálidos,
+tipografía grande, verde profundo y una forma gráfica inspirada en la voz.
+Nombre de trabajo: VERVO. Se utiliza para hacer coherentes las pantallas y los textos. Su
+disponibilidad comercial y de dominio deberá verificarse antes de adoptarlo.
+
+Resultado que debe ofrecer
+Ayudar a hispanohablantes que ya comprenden algo de inglés a desenvolverse al hablar. Cada sesión
+conecta una situación concreta con conversación, correcciones prioritarias y un nuevo intento. El
+usuario debe entender qué practicar y observar evidencia de su avance.
+
+Alcance del documento
+Especifica el sitio público y la aplicación: diseño, contenido, estados, adaptación y entrega. La versión
+1.1 incorpora Claude Code, skills de diseño, Figma MCP, Playwright, GSAP ScrollTrigger, Lenis y el uso
+del .md de referencia. Es un brief para ejecución posterior; no incluye código.
+Decisión               Especificación base
+
+                       Hispanohablantes adultos con nivel orientativo A2 a B1; estudiantes y personas que
+Público inicial
+                       trabajan.
+
+Primer recorrido       Vida cotidiana; trabajo y viajes amplían la oferta después de validar el uso.
+
+Conversión principal   Completar una primera práctica y recibir una corrección útil.
+
+Modelo propuesto       Demostración gratuita y plan mensual con minutos definidos.
+
+Prioridad              Una conversación fiable y un aprendizaje claro antes que efectos complejos.
+
+Lectura recomendada: estrategia 1–2; sistema visual 3–4; pantallas 5–11; calidad y alcance 12–14;
+herramientas, guion de scroll, referencia .md y validación 15–18.
+
+
+
+
+                                                                                                 VERVO / BRIEF V1.1 / 1
+ESPECIFICACIÓN / 02
+
+
+Arquitectura y recorridos
+El sitio público explica el beneficio y permite probarlo. La aplicación conserva objetivos, sesiones,
+errores y progreso. Ambas superficies comparten identidad, pero la aplicación reduce la carga visual
+durante la práctica.
+ID       Pantalla                           Acción principal
+
+P01      Inicio público                     Probar una conversación
+
+P02      Cómo funciona                      Ver una sesión de ejemplo
+
+P03      Planes                             Comparar acceso y elegir plan
+
+P04      Ayuda y preguntas                  Resolver una duda o contactar soporte
+
+A01      Acceso y recuperación              Entrar o crear cuenta
+
+A02      Configuración inicial              Elegir meta y probar micrófono
+
+A03      Diagnóstico                        Obtener una recomendación inicial
+
+A04      Hoy                                Comenzar o continuar la sesión
+
+A05      Conversaciones                     Elegir una situación
+
+A06      Sesión por voz                     Completar el objetivo
+
+A07      Revisión                           Practicar una corrección
+
+A08      Mi entrenamiento y cuaderno        Retomar la ruta y los repasos
+
+A09      Mi progreso                        Comparar prácticas
+
+A10      Cuenta y suscripción               Gestionar preferencias y plan
+
+
+Primer contacto
+P01 → A01 → A02 → A03 → primera sesión A06 → revisión A07 → recomendación para mañana. Antes
+del registro, el visitante puede abrir una demostración opcional. Esta usa una grabación preparada,
+identificada como ejemplo, y nunca simula que está escuchando al visitante.
+
+Regreso y compra
+Usuario recurrente: A01 → A04 → práctica recomendada → revisión → repaso guardado. La invitación
+a suscribirse aparece después de entregar el resultado gratuito o al elegir una función de pago. Una
+sesión iniciada nunca se interrumpe para cobrar.
+
+Navegación persistente
+Escritorio: barra lateral con Hoy, Conversaciones, Mi entrenamiento, Mi cuaderno y Mi progreso;
+cuenta al pie. Móvil: Hoy, Conversaciones, Repasar y Progreso en barra inferior; ruta y cuaderno
+dentro de Repasar. La sesión sustituye esta navegación por controles de práctica y salida con
+confirmación.
+
+
+
+
+                                                                                    VERVO / BRIEF V1.1 / 2
+ESPECIFICACIÓN / 03
+
+
+Dirección de arte y color
+Concepto visual
+La voz toma forma. Una cinta acústica conecta conversación, corrección y repaso. En la portada
+cambia con el scroll como recurso editorial; dentro de la sesión responde exclusivamente al audio
+real. Se mantiene abstracta y discreta, sin representar a un tutor humano.
+Composición editorial asimétrica, titulares amplios, mucho espacio entre bloques y capturas
+auténticas del producto. El contraste entre superficies claras y estudio oscuro marca el cambio entre
+explorar y practicar.
+Rol                   Color                Aplicación
+
+Fondo cálido          #F6F7F2              Página pública y lienzo general de la aplicación.
+
+Superficie            #FFFFFF              Formularios, tarjetas funcionales y paneles.
+
+Texto principal       #15241F              Titulares y cuerpo sobre fondos claros.
+
+Texto secundario      #52635B              Ayuda, metadatos y descripciones.
+
+Verde de marca        #14634D              Botones principales, enlaces y selección.
+
+Verde hover           #0F4F3D              Respuesta de interacción del botón principal.
+
+Lima                  #D7F57B              Acento dentro del estudio; texto oscuro encima.
+
+Estudio               #0D211C              Fondo de conversación y un bloque público destacado.
+
+Superficie oscura     #17382E              Paneles secundarios dentro del estudio.
+
+Borde funcional       #7A8D83              Límites de campos y controles sobre fondo claro.
+
+Borde decorativo      #D8E0D8              Separación visual que no identifica controles.
+
+Alerta y error        #8A4B08 / #B42318    Avisos y errores con icono y texto, nunca solo color.
+
+
+Reglas de uso
+El verde de marca sobre blanco y el blanco sobre verde son combinaciones base. El lima se reserva
+para énfasis sobre fondo oscuro o con texto oscuro. Los textos del estudio serán #F6F7F2 y #C4D2CA.
+Verificar contraste de cada estado final; la paleta no sustituye una auditoría.
+Usar profundidad mediante capas y sombras suaves. Reservar translucidez para el encabezado
+público, con fondo opaco alternativo. Evitar fondos de partículas, vidrio sobre párrafos, banderas
+como decoración, avatares fotorrealistas y cuadrículas de tarjetas repetidas en todas las secciones.
+
+
+
+
+                                                                                            VERVO / BRIEF V1.1 / 3
+ESPECIFICACIÓN / 04
+
+
+Tipografía y componentes
+Familia propuesta: Manrope, pesos 400, 500, 600 y 700; fallback sans serif del sistema. Una sola
+familia mantiene continuidad. El texto del sitio debe permanecer seleccionable y adaptable; nunca
+convertir titulares en imágenes.
+Uso                               Escritorio                                     Móvil
+
+Titular principal                 80 px / 84 px; peso 600                        44 px / 48 px; peso 600
+
+Título de sección                 48 / 54; peso 600                              32 / 38; peso 600
+
+Título de pantalla                32 / 40; peso 600                              26 / 34; peso 600
+
+Título de componente              20 / 28; peso 600                              20 / 28; peso 600
+
+Cuerpo                            18 / 28 público; 16 / 24 app                   16 / 24
+
+Ayuda y etiqueta                  14 / 20; peso 400 o 500                        14 / 20
+
+Botón                             16 / 20; peso 600                              16 / 20; peso 600
+
+
+Retícula y ritmo
+Contenedor público máximo de 1280 px. A 1440 px: 80 px de margen y 12 columnas con separación
+de 24 px. App: barra lateral de 240 px y contenido con 32 px de margen; formularios de hasta 560 px y
+lectura de hasta 720 px. Móvil: márgenes de 20 px y una columna.
+Escala de espacio: 4, 8, 12, 16, 24, 32, 48, 64 y 96 px. Separación entre secciones públicas: 96 px en
+escritorio y 56 px en móvil. Radios: 12 px en campos, 16 px en botones y 24 px en paneles. Las
+cápsulas se usan para filtros y etiquetas.
+
+Biblioteca mínima de componentes
+Componente             Regla de diseño y estados
+
+                       Altura 52 px público y 48 px app. Verde y texto blanco. Normal, hover, foco, pulsado,
+Botón principal
+                       cargando y deshabilitado.
+
+                       Etiqueta persistente, ayuda y error debajo. Altura mínima 48 px. El placeholder solo aporta
+Campo y selector
+                       un ejemplo.
+
+                       Categoría, título, dificultad, duración y acción. Selección visible con borde y texto. Sin
+Tarjeta de situación
+                       controles anidados ambiguos.
+
+                       Micrófono central de 72 px; etiqueta de estado y acción. Pausar y terminar como acciones
+Control de voz
+                       distintas.
+
+                       Icono, mensaje y siguiente acción. Confirmación breve no invasiva; error relevante
+Aviso
+                       permanece visible.
+
+                       Título claro, cierre y foco inicial. Devolver el foco al activador al cerrar. Acciones principales
+Modal o panel
+                       visibles.
+
+Iconos lineales de una sola familia, caja de 24 px y trazo visual uniforme. Etiquetar acciones poco
+evidentes; las herramientas esenciales no dependen de hover.
+
+
+
+
+                                                                                                     VERVO / BRIEF V1.1 / 4
+ESPECIFICACIÓN / 05
+
+
+Inicio público y primera impresión
+Encabezado P01
+Altura 80 px en escritorio y 64 px en móvil. Marca a la izquierda; Cómo funciona, Situaciones y Planes
+al centro; Entrar y Probar gratis a la derecha. En móvil, marca, acceso al menú y CTA compacto. Al
+desplazarse, fondo sólido o vidrio muy sutil sin perder contraste.
+
+Primer bloque
+Distribución de 5 columnas de texto y 7 de producto. Altura natural de contenido, aproximadamente
+720 px en escritorio, sin forzar pantalla completa en móvil. Sobre el fondo cálido, un panel oscuro
+muestra el estudio y parte de una conversación. La cinta acústica conecta visualmente texto y panel.
+Antetítulo: INGLÉS QUE SE PRACTICA
+Titular: Tu inglés.
+En voz alta.
+Descripción: Practica conversaciones reales, entiende qué mejorar y vuelve a intentarlo con un plan
+hecho para ti.
+CTA principal: Probar una conversación
+CTA secundario: Ver cómo funciona
+Nota de apoyo: Empieza con una práctica breve. Sin tarjeta.
+El CTA principal abre A01 para iniciar una práctica real; si ya inició sesión, abre A04. El secundario
+desplaza a la demostración y la explicación del método. La nota Sin tarjeta solo se publica si ese flujo
+existe exactamente así.
+
+Demostración visible
+Mostrar la etiqueta Sesión de ejemplo y el objetivo Presentarte a alguien. El personaje de voz
+pregunta: “What do you enjoy doing after work or school?” Un botón Escuchar ejemplo inicia audio
+con subtítulos; no hay reproducción automática. Al terminar se muestra una corrección preparada y el
+CTA Practicar con mi voz.
+
+Situaciones que reconoces
+Título: Hay conversaciones que quieres poder tener. Presentar tres composiciones amplias
+alternadas: contar tu fin de semana, resolver un problema durante un viaje y explicar una idea en el
+trabajo. Cada una contiene una frase de contexto, duración orientativa y Ver ejemplo. Marcar Trabajo
+y Viajes como Próximamente hasta que existan.
+
+El método en una escena continua
+Título: Practica. Entiende. Vuelve a intentarlo. Una escena continua muestra 1 Elige una situación; 2
+Habla con ayuda; 3 Practica lo que hoy te costó. En escritorio usa GSAP ScrollTrigger; en móvil
+conserva los pasos en lectura vertical. Guion preciso en la página 16.
+La experiencia visual se apoya en producto real y tipografía. No incluir cifras de usuarios, logotipos de
+instituciones, premios ni testimonios hasta disponer de evidencia y autorización.
+
+
+
+
+                                                                                      VERVO / BRIEF V1.1 / 5
+ESPECIFICACIÓN / 06
+
+
+Contenido público y conversión
+Demostrar la corrección
+Título: Una corrección que puedes usar. Es el segundo acto de la escena de la página 16: Dijiste
+“Yesterday I go to the cinema”; Puedes decir “Yesterday I went to the cinema”; explicación “Para
+hablar de ayer, aquí usamos went”. Acción: Volver a practicar. No duplicar la demostración;
+identificarla como ejemplo.
+
+Demostrar el progreso
+Título: Escucha lo que estás logrando. Dos reproductores con etiquetas Primera práctica y Práctica
+posterior, misma tarea y grabaciones de demostración identificadas como tales. Texto: “Compara tus
+intentos y observa cuánta ayuda necesitas”. No usar porcentajes de fluidez ni plazos garantizados.
+
+Planes P03
+Título: Un plan para practicar con constancia. Dos opciones: Empieza gratis y Práctica mensual.
+Tarjetas de igual altura, comparación legible y una sola acción por plan. El plan mensual puede
+destacarse como Para practicar cada semana; no usar Más popular sin datos.
+La maqueta utilizará 299 MXN al mes y 180 minutos de conversación como propuesta de prueba.
+Estos valores no están aprobados comercialmente. Mostrar importe total, frecuencia de renovación,
+minutos incluidos y cancelación. En producción deben coincidir con la oferta y el cobro reales.
+
+Preguntas frecuentes P04
+Pregunta                       Respuesta propuesta
+
+                               Está pensado para quienes ya entienden frases básicas y quieren practicar al
+¿Necesito saber inglés?
+                               hablar. La práctica inicial te orienta.
+
+¿Estoy hablando con una        Practicas con un tutor de inteligencia artificial. Las respuestas y correcciones
+persona?                       pueden equivocarse.
+
+                               En conversación revisas las correcciones al terminar. En los ejercicios guiados
+¿Me corrige mientras hablo?
+                               recibes ayuda al momento.
+
+                               Sí, desde un navegador compatible con micrófono. Antes de empezar puedes
+¿Puedo usarlo en el celular?
+                               comprobar el audio.
+
+¿Obtengo una certificación?    El progreso es orientativo. El servicio no emite una certificación oficial de nivel.
+
+                               Puedes desactivar la renovación desde tu cuenta y conservar el acceso hasta el
+¿Puedo cancelar?
+                               final del periodo pagado.
+
+
+Cierre y descubrimiento
+Cierre: Tu próxima conversación empieza aquí. CTA: Probar una conversación. Pie: método, ayuda,
+contacto, privacidad, términos y suscripción. Título SEO propuesto: Practica inglés conversando |
+VERVO. Descripción: Practica situaciones reales en inglés, recibe correcciones claras y sigue tu
+progreso con un plan adaptado a tus objetivos. Páginas de cuenta y sesiones fuera del índice público.
+
+
+
+
+                                                                                               VERVO / BRIEF V1.1 / 6
+ESPECIFICACIÓN / 07
+
+
+Registro y diagnóstico inicial
+Acceso A01
+Pantalla limpia con formulario centrado y una muestra discreta del producto. Ofrecer acceso por
+correo y contraseña, recuperación y enlace a registro. Mostrar requisitos antes del error. Confirmar
+operaciones con mensajes claros, sin revelar si una dirección ajena está registrada. Incorporar acceso
+social solo si se implementa realmente.
+
+Configuración A02
+Paso              Contenido                                           Comportamiento
+
+                  ¿Para qué quieres usar tu inglés? Vida cotidiana,   Elegir una opción; Vida cotidiana es el recorrido
+1 Meta
+                  Trabajo, Viajes.                                    disponible al inicio.
+
+                  ¿Cómo te sientes al hablar? Me cuesta empezar /
+2 Confianza                                                       Orienta la entrada; no asigna una certificación.
+                  Puedo responder / Quiero expresarme mejor.
+
+                                                                      Modificable después. Recordatorios opcionales y
+3 Rutina          ¿Cuánto quieres practicar? 5, 10 o 15 minutos.
+                                                                      separados.
+
+                                                                      Pedir permiso tras pulsar Probar micrófono.
+4 Audio           Vamos a comprobar tu micrófono.
+                                                                      Medidor y reproducción de una frase breve.
+
+Mostrar Paso 2 de 4 y Atrás. Guardar al avanzar. Permitir continuar más tarde. Si no puede usar voz,
+ofrecer Explorar ejemplos o práctica escrita, aclarando que no evalúa expresión oral.
+
+Diagnóstico A03
+Duración orientativa de 3 a 5 minutos, sin cuenta regresiva intimidante. Una pregunta de
+presentación, una actividad de comprensión y una situación breve con seguimiento. Las instrucciones
+y ayudas están en español; las intervenciones de práctica, en inglés.
+Resultado: Este es un buen punto para empezar. Mostrar fortalezas observadas, una dificultad
+prioritaria y sesión sugerida. Si la muestra es insuficiente: “Necesitamos escucharte un poco más para
+recomendarte una dificultad”. No inventar precisión mediante puntuaciones.
+
+Salida hacia el primer valor
+CTA: Comenzar mi primera práctica. Antes de abrir el estudio, mostrar el objetivo y la duración.
+Explicar: “Puedes pedir una pista en cualquier momento”. El usuario debe llegar a una conversación
+funcional sin configurar un perfil largo.
+Una sesión de texto y una sesión oral se registran por separado. Si el usuario omite el diagnóstico, se
+ofrece una dificultad provisional y una opción visible para cambiarla.
+
+
+
+
+                                                                                                  VERVO / BRIEF V1.1 / 7
+ESPECIFICACIÓN / 08
+
+
+Inicio de la aplicación y situaciones
+Hoy A04
+Encabezado: Hoy puedes dar el siguiente paso. Debajo, una tarjeta protagonista con la práctica
+recomendada, objetivo, tiempo y CTA Comenzar práctica. Si existe una sesión incompleta, esa tarjeta
+pasa a Continuar práctica y muestra dónde quedó.
+A la derecha en escritorio: meta semanal expresada como sesiones completadas y un repaso
+pendiente. Debajo: última corrección útil y siguiente hito. En móvil se conserva ese orden en una sola
+columna. Máximo una acción visualmente dominante por bloque.
+Estado nuevo: “Tu primera conversación está lista”. Estado sin historial: “Aquí verás tus prácticas
+cuando completes una sesión”. Regreso tras una pausa: “Retomamos desde donde lo dejaste”. Evitar
+mensajes que culpen al usuario por romper una racha.
+
+Conversaciones A05
+Encabezado con búsqueda y filtros Meta, Dificultad y Duración. Escritorio: tres columnas de tarjetas
+amplias. Móvil: una columna y filtros en panel inferior. La cantidad de resultados aparece junto a los
+filtros; Limpiar filtros restaura la vista.
+Campo de tarjeta      Ejemplo editorial
+
+Categoría             Vida cotidiana
+
+Título                Cuenta cómo estuvo tu fin de semana
+
+Objetivo              Cuenta dos actividades y haz una pregunta de seguimiento.
+
+Dificultad            Con apoyo / Con menos ayuda / Con imprevistos
+
+Duración              Aproximadamente 10 minutos
+
+Ayudas                Pistas y expresiones disponibles
+
+Estado                Por empezar / En curso / Practicada
+
+Acción                Ver situación; después, Comenzar
+
+
+Detalle previo
+Mostrar contexto, objetivo, expresiones de preparación y ayudas disponibles. El botón Comenzar abre
+el estudio con esa situación seleccionada. Una práctica completada sigue accesible para repetirla;
+Practicada no equivale a Dominada.
+
+Mi entrenamiento A08
+Ruta por semanas o habilidades en una lista vertical. Cada unidad agrupa preparación, conversación y
+repaso. El usuario puede cambiar su meta; antes de hacerlo se aclara que el historial se conserva y la
+recomendación futura cambia. Evitar rutas decorativas demasiado largas que escondan el siguiente
+paso.
+
+
+
+
+                                                                                     VERVO / BRIEF V1.1 / 8
+ESPECIFICACIÓN / 09
+
+
+Estudio de conversación
+A06 es el centro del producto. Fondo #0D211C, texto claro, un objetivo visible y controles estables. La
+voz tiene protagonismo; los elementos decorativos quedan subordinados a la comprensión.
+
+Composición
+Escritorio: área principal de conversación de unos dos tercios y panel lateral de contexto y ayudas de
+un tercio. Arriba, nombre de la situación y Salir. En el centro, último turno del tutor, reproductor y
+transcripción opcional. Abajo, micrófono, estado, Pausar y Terminar. Las correcciones no ocupan el
+centro durante el diálogo.
+Móvil: una columna, objetivo plegable y ayudas en panel inferior. El control de voz permanece por
+encima del área segura del dispositivo. La cinta acústica ocupa como máximo el 20 % de la pantalla y
+desaparece en pantallas de poca altura.
+
+Interacción de la primera versión
+Conversación por turnos: tocar Hablar para grabar y Enviar para cerrar el turno. Cancelar descarta la
+grabación actual. Mientras el tutor responde, se puede pausar su audio. La experiencia visual no
+promete interrupciones naturales o conversación simultánea si aún no están implementadas.
+Estado                Texto visible                                 Acción o recuperación
+
+Listo                 Cuando quieras, empieza.                      Hablar
+
+Grabando              Te escucho.                                   Enviar o Cancelar; señal de grabación explícita
+
+                                                                    Conservar el turno; no mostrar barra de progreso
+Procesando            Preparando una respuesta…
+                                                                    falsa
+
+Respondiendo          Escucha y responde a tu ritmo.                Pausar o Repetir
+
+Pausado               Práctica en pausa.                            Continuar o Terminar
+
+No se entendió        No pude entender esa parte.                   Escuchar tu grabación y Volver a intentar
+
+Sin conexión          Se interrumpió la conexión.                   Reintentar; indicar qué turnos ya se guardaron
+
+Sin permiso           Activa el micrófono para practicar por voz.   Ver instrucciones o Explorar por escrito
+
+
+Ayudas y salida
+Pedir una pista revela primero intención, después vocabulario y finalmente una frase modelo.
+Escuchar otra vez y Mostrar traducción son acciones separadas. Terminar abre revisión; Salir permite
+guardar los turnos confirmados o descartar la sesión con una confirmación clara. El micrófono se
+detiene al pausar, salir o cambiar de pestaña.
+
+
+
+
+                                                                                                    VERVO / BRIEF V1.1 / 9
+ESPECIFICACIÓN / 10
+
+
+Correcciones y evidencia de avance
+Revisión A07
+Título: Esto ya lo pudiste expresar. Primero mostrar un logro ligado al objetivo; después, hasta tres
+observaciones prioritarias. No corregir variantes válidas como si fueran errores. Diferenciar Error,
+Alternativa más natural y Sugerencia de estilo.
+Cada observación contiene tu fragmento, versión sugerida, explicación breve y botón Practicar esta
+frase. La corrección de pronunciación requiere evidencia del audio. Si solo existe transcripción, limitar
+el resultado a aspectos que se puedan evaluar desde el texto.
+Ejemplo de interfaz: Dijiste “Yesterday I go…”; Puedes decir “Yesterday I went…”; Motivo “Para contar
+algo de ayer, aquí necesitas el pasado”. Tras el ejercicio, plantear otra pregunta que requiera la
+misma habilidad. Acciones: Practicar ahora, Guardar para repasar y Señalar un problema con esta
+corrección.
+
+Cuaderno A08
+Dos vistas: Expresiones guardadas y En entrenamiento. Cada entrada conserva contexto, explicación y
+acceso al fragmento de audio si el usuario eligió guardarlo. Estados: Detectado, En práctica y Usado
+en otra situación. El usuario puede editar una nota, eliminarla o silenciar un recordatorio.
+
+Progreso A09
+Indicador               Cómo se presenta                              Límite de interpretación
+
+Práctica realizada      Sesiones y minutos propios de voz.            Mide actividad, no dominio.
+
+Ayuda utilizada         Número de pistas en tareas comparables.       Comparar solo niveles y tareas equivalentes.
+
+Objetivo comunicativo   Qué logró expresar o resolver.                Explicar el criterio con un ejemplo.
+
+Aplicación posterior    Habilidad utilizada en una situación nueva.   Necesita evidencia; no basta repetir una frase.
+
+                                                                      Reproducción voluntaria; sin prometer
+Comparación de voz      Dos grabaciones con fecha y contexto.
+                                                                      certificación.
+
+Vista inicial: “Completa algunas prácticas para empezar a comparar”. Con pocos datos, mostrar
+evidencia individual y evitar gráficos de tendencia. No representar el inglés como un porcentaje
+global. Presentar cualquier nivel estimado como orientativo.
+
+Cierre de sesión
+Texto: La próxima vez practicaremos cómo hacer preguntas de seguimiento. CTA principal:
+Terminar por hoy. Secundario: Seguir practicando. Mostrar una recomendación concreta y permitir
+descansar; no forzar otra sesión para conservar el avance.
+
+
+
+
+                                                                                              VERVO / BRIEF V1.1 / 10
+ESPECIFICACIÓN / 11
+
+
+Suscripción y cuenta
+Oferta propuesta
+Diseñar para un plan gratuito y un plan mensual. Precio de trabajo: 299 MXN al mes con 180
+minutos de conversación. Validar precio, minutos, impuestos incluidos y costos operativos antes de
+publicar. El precio visible final debe ser el total cobrado; no usar descuentos ficticios.
+Acceso                Incluye                                           Regla de uso
+
+                      Diagnóstico orientativo y dos prácticas guiadas   Sin tarjeta. Límite por cuenta, no una
+Empieza gratis
+                      de hasta 5 minutos, con revisión.                 renovación mensual implícita.
+
+                                                                        Minutos de audio del usuario y tutor; las
+                      Ruta inicial, biblioteca disponible, repasos,
+Práctica mensual                                                        pausas y el procesamiento no consumen
+                      historial y 180 minutos por ciclo.
+                                                                        saldo.
+
+                                                                        No permitir iniciar una sesión que exceda
+                      Cuaderno, historial y ejercicios de texto
+Al agotarse                                                             el saldo; explicar el límite antes de
+                      disponibles.
+                                                                        empezar.
+
+El diagnóstico y sus fallos técnicos no consumen saldo. Si un error impide utilizar un turno, devolver
+los minutos de ese turno. El primer lanzamiento no tendrá recargas ni plan anual. Los minutos sin
+usar no se acumulan; indicarlo junto al plan, no ocultarlo en el pie.
+
+Compra y confirmación
+Secuencia: elegir plan → revisar total y renovación → pagar → confirmar acceso. El resumen muestra
+plan, cantidad de minutos, periodo, próxima fecha de cobro y enlace a condiciones. Estados:
+procesando, pago confirmado, pago fallido y confirmación pendiente. Ante estado pendiente no pedir
+pagar de nuevo sin verificar.
+Texto de compra: Activar mi práctica mensual. Confirmación: “Tu plan está activo. Ya puedes
+comenzar tu siguiente práctica”. Si falla: “No pudimos confirmar el pago. Revisa el estado antes de
+intentarlo de nuevo”.
+
+Cuenta A10
+Preferencias: meta, duración, velocidad de audio, subtítulos, recordatorios y accesibilidad.
+Suscripción: minutos disponibles, siguiente renovación, historial de cobros y Cancelar renovación. La
+cancelación permite conservar el acceso hasta la fecha pagada y muestra una confirmación
+inequívoca.
+
+Grabaciones y confianza
+Separar el procesamiento necesario para la sesión de guardar audio para comparaciones futuras.
+Pedir una elección clara antes de conservar grabaciones. Permitir borrarlas individualmente y desde
+la cuenta. Definir retención y proveedores antes del lanzamiento; no prometer “no guardamos nada”
+si existe almacenamiento transitorio.
+
+
+
+
+                                                                                           VERVO / BRIEF V1.1 / 11
+ESPECIFICACIÓN / 12
+
+
+Adaptación, movimiento y accesibilidad
+Ancho de referencia       Comportamiento
+
+                          Una columna, margen adaptable de 16 a 20 px, navegación inferior y paneles apilados.
+320 a 767 px
+                          Sin desbordamiento horizontal.
+
+                          Margen de 32 px, tarjetas en dos columnas. Navegación compacta; ayudas de sesión en
+768 a 1199 px
+                          panel desplegable.
+
+                          Retícula de 12 columnas, navegación lateral completa, estudio con panel contextual.
+1200 px o más
+                          Máximo de contenido 1280 px.
+
+
+Movimiento con propósito
+Respuesta de botón: 120–180 ms. Panel: 220–300 ms. Entradas públicas: 400–500 ms y hasta 16 px.
+GSAP ScrollTrigger controla las escenas ligadas al desplazamiento y Lenis suaviza el scroll de
+escritorio en la portada. La app conserva scroll nativo; véanse páginas 16–17 para reglas, adaptación y
+movimiento reducido.
+En una sesión, la cinta acústica reacciona únicamente a audio real; durante procesamiento muestra
+un estado textual distinto. En la portada es una ilustración ligada al scroll, marcada como
+demostración. Con movimiento reducido se sustituye por una forma estática. Nada parpadea ni finge
+escucha.
+
+Accesibilidad como criterio de entrega
+Objetivo: WCAG 2.2 AA, verificado mediante revisión manual y herramientas. Contraste de texto
+normal mínimo 4.5:1 y de texto grande 3:1. Controles e indicadores esenciales con contraste
+suficiente. Las áreas táctiles se diseñan a 48 × 48 px; este es un criterio de producto deliberadamente
+cómodo.
+Toda acción funciona con teclado y foco visible; los modales gestionan y devuelven foco. Orden de
+lectura equivalente al visual. Mensajes de estado anunciables sin leer cada actualización del medidor.
+Formularios con etiquetas; errores asociados al campo. Subtítulos y transcripción disponibles, zoom al
+200 % y prueba de reflujo.
+El modo escrito mantiene acceso al aprendizaje cuando no se puede usar voz. Nunca se presenta
+como evaluación de pronunciación. Los audios de demostración requieren activación y ofrecen pausa.
+No depender exclusivamente de color, sonido, gesto o hover.
+
+Calidad percibida y rendimiento
+Objetivos web: LCP ≤ 2.5 s, INP ≤ 200 ms y CLS ≤ 0.1 al percentil 75, separados por móvil y escritorio.
+Son metas para medir, no resultados ya obtenidos. Cargar primero contenido y controles; reservar
+dimensiones de medios y cargar ejemplos bajo demanda.
+Objetivo experimental de conversación: respuesta audible mediana inferior a 2 s tras enviar el turno.
+Medir también los casos lentos; después de una espera prolongada ofrecer recuperación. La latencia
+de voz se evalúa por separado de las métricas web.
+
+
+
+
+                                                                                          VERVO / BRIEF V1.1 / 12
+ESPECIFICACIÓN / 13
+
+
+Alcance y materiales de entrega
+Primera versión
+Público inicial adulto, interfaz en español, práctica en inglés y ruta de Vida cotidiana de cuatro
+semanas. Veinticuatro situaciones de aproximadamente 5 a 10 minutos, agrupadas en presentación,
+experiencias, opiniones y resolución de pequeños problemas. La ruta de cuatro semanas organiza la
+práctica; no promete alcanzar un nivel en ese plazo.
+Prioridad               Contenido
+
+                        Página pública, acceso, configuración, diagnóstico orientativo, Hoy, biblioteca inicial,
+P0 para lanzar
+                        conversación por turnos, revisión, repaso, progreso básico, cuenta, ayuda y cobro.
+
+                        Rutas de Trabajo y Viajes, situaciones personalizadas, comparaciones más detalladas,
+P1 después de validar
+                        acceso social y recordatorios adicionales.
+
+                        Avatares de video, llamadas entre usuarios, tutores humanos, múltiples idiomas, niveles
+Fuera del lanzamiento
+                        completos A1 a C2, certificaciones y conversación simultánea.
+
+
+Ficha editorial por situación
+Cada situación necesita: ID, título, dificultad orientativa, objetivo observable, contexto, pregunta de
+apertura, preguntas de seguimiento, tres expresiones útiles, ayudas graduadas, errores que se
+trabajarán, criterio de cierre y dos variantes de repaso. Un profesor revisa contenido y criterios; la IA
+adapta dentro de ese marco.
+
+Inventario visual y sonoro
+Diseño entrega marca provisional en variantes clara y oscura, cinta acústica en reposo y activa,
+componentes con estados, iconos coherentes, pantallas maestras de 1440 y 390 px y adaptaciones
+intermedias. Incluir ocho capturas reales del producto para la página pública; mientras sean
+maquetas, identificarlas como ejemplos.
+Contenido entrega las 24 fichas, instrucciones, correcciones de muestra, preguntas frecuentes y
+mensajes de error. Audio entrega ejemplos con derechos de uso claros, subtítulos y transcripciones.
+No se requiere fotografía de stock para la identidad inicial.
+
+Prototipo que recibirá desarrollo
+Prototipo navegable de inicio → registro → diagnóstico → sesión → corrección → repaso, con
+demostración opcional y compra y cancelación. Entregar estados vacío, carga, éxito, error y límite;
+reglas de foco y adaptación. Claude Code seguirá las herramientas y verificaciones de las páginas 15–
+18.
+Decisiones pendientes de negocio: nombre definitivo, precio y minutos, método de cobro,
+calendario de rutas, política de grabaciones, responsables de soporte y revisión pedagógica. Estas
+decisiones no impiden diseñar las pantallas; sí condicionan el lanzamiento y sus promesas públicas.
+
+
+
+
+                                                                                               VERVO / BRIEF V1.1 / 13
+ESPECIFICACIÓN / 14
+
+
+Aceptación y validación
+Condiciones para aceptar la implementación
+Área                  Comprobación verificable
+
+                      Todos los CTA llevan a la acción descrita. Los ejemplos están etiquetados. No hay cifras,
+Contenido
+                      certificaciones ni testimonios inventados.
+
+                      El usuario completa una sesión, recibe observaciones vinculadas a sus respuestas y practica al
+Práctica
+                      menos una corrección.
+
+                      Al volver se conservan turnos confirmados, correcciones y siguiente paso. Una reconexión no
+Continuidad
+                      duplica turnos ni consumo.
+
+                      Permiso, grabación, reproducción, pausa, fallo y salida tienen estados distintos. El micrófono
+Audio
+                      queda detenido al salir.
+
+                      Precio y saldo coinciden con la oferta. Compra fallida o pendiente no se muestra como activa.
+Cobro
+                      Cancelar renovación es accesible.
+
+                      Revisar 320, 390, 768, 1024 y 1440 px; texto largo, teclado móvil y zoom. Sin recortes,
+Presentación
+                      solapamientos ni scroll lateral.
+
+                      Completar el recorrido con teclado; comprobar foco, etiquetas, contraste, transcripciones y
+Accesibilidad
+                      movimiento reducido.
+
+
+Validar utilidad antes de ampliar
+Probar con 10–15 personas del público inicial. Observar si empiezan sin asistencia, terminan una
+práctica, entienden una corrección y vuelven a usarla en otra situación. Recoger también qué
+correcciones consideran incorrectas y por qué. Estos son criterios de prueba, no resultados
+alcanzados.
+Medir inicio y finalización de sesión, revisión de correcciones, repaso, regreso a siete días, conversión
+y cancelación. Guardar eventos de uso sin incluir audio ni transcripciones en analítica general.
+Interpretar por separado actividad, aprendizaje y disposición a pagar.
+
+Referencias para ejecutar y revisar
+Las decisiones visuales y comerciales son propuestas del proyecto. Estas fuentes fundamentan
+accesibilidad, rendimiento y evaluación. Las herramientas de la revisión 1.1 se documentan en la
+página 18. Consulta: 11 de noviembre de 2026.
+W3C · WCAG 2.2 y criterios de accesibilidad
+W3C · Contraste mínimo de texto
+web.dev · Web Vitals y umbrales de experiencia
+Consejo de Europa · Competencia fonológica e inteligibilidad
+Speak · Referencia competitiva de práctica y personalización
+Google Fonts · Familia Manrope
+
+
+
+
+                                                                                                   VERVO / BRIEF V1.1 / 14
+ESPECIFICACIÓN / 15
+
+
+Ejecución con Claude Code
+Requisitos de trabajo. Claude Code ejecutará el proyecto usando este brief y el .md que entregará
+Kadesh. La estética debe explicar el producto: una voz que se convierte en una frase clara, una
+corrección útil y una nueva oportunidad de hablar. El recorrido funcional y la dirección de arte se
+revisan juntos.
+Recurso requerido         Aplicación y evidencia esperada
+
+                          Fuente: emilkowalski/skills. Usar emil-design-eng para decisiones de interfaz; choreograph
+Skills de Emil Kowalski   para coordinar escenas; review-animations y animation-performance para revisar
+                          movimiento. Registrar los ajustes aplicados.
+
+                          Fuente: pbakaus/impeccable. Aplicar critique y audit para detectar problemas; después
+Skills de Impeccable      polish, adapt y optimize según los hallazgos. Documentar jerarquía, tipografía, adaptación
+                          y rendimiento. Verificar los nombres disponibles en la versión instalada.
+
+                          Conectar el servidor oficial al archivo de diseño. Consultar frames, capturas, variables y
+Figma MCP                 componentes; reutilizar sus decisiones. Relacionar cada pantalla del brief con su nodo de
+                          Figma y comparar la implementación con esa referencia.
+
+                          Implementar las escenas de la página 16 con progreso vinculado al scroll, fijación temporal
+GSAP ScrollTrigger
+                          del escenario y transiciones entre estados. No basta con entradas genéricas al aparecer.
+
+                          Suavizar el desplazamiento de la portada en escritorio y sincronizarlo con ScrollTrigger.
+Lenis
+                          Ajustar la sensación sobre una prueba real; conservar las excepciones de la página 17.
+
+                          Recorrer la aplicación y comprobar comportamiento, estados y adaptación en navegador.
+Playwright
+                          Generar capturas comparables y evidencias de las pruebas de la página 18.
+
+
+Preparación y orden de trabajo
+Primero leer el brief y el .md completo; comprobar las skills instaladas y la conexión de Figma.
+Registrar versiones y resolver diferencias de criterios. Preparar el sistema visual y los frames de
+Portada, Hoy, Sesión y Revisión a 1440 y 390 px. Después construir un recorrido completo de práctica,
+añadir las escenas y realizar la revisión visual y funcional.
+Si falta el archivo de Figma, preparar las pantallas a partir del brief y la referencia y vincularlas al
+archivo cuando esté disponible. Identificar esa dependencia; no afirmar que se consultó Figma sin
+acceso. Utilizar las skills oficiales por su origen para distinguir comandos con el mismo nombre.
+Resultado exigido: decisiones visuales justificadas, funciones comprobables y un registro breve de
+mejoras. Las herramientas deben influir en el resultado, no aparecer solo como una lista de
+dependencias.
+
+
+
+
+                                                                                                VERVO / BRIEF V1.1 / 15
+ESPECIFICACIÓN / 16
+
+
+Guion de animación de la portada
+Dirección propuesta: Del pensamiento a la voz. La cinta acústica actúa como hilo visual. El visitante
+comprende cómo funciona el servicio mientras se desplaza. Los recorridos siguientes son parámetros
+iniciales de diseño; se afinan con las pruebas, conservando la lectura y el acceso inmediato al CTA.
+
+01 La primera voz
+El titular y el CTA están legibles desde la primera carga. Durante los primeros 400 px de scroll de
+escritorio, el panel de conversación pasa de escala 0.96 a 1 y se desplaza hasta 24 px; la cinta recorre
+un máximo de 40 px por detrás. El texto mantiene su posición. La escena no se fija ni retrasa la
+posibilidad de comenzar.
+
+02 Situaciones que se abren
+Las tres composiciones de situaciones entran por turnos al alcanzar el 85 % de la altura visible:
+opacidad y desplazamiento de 16 px durante 450 ms, con desfase máximo de 60 ms entre título y
+ejemplo. La cinta conecta los bloques sin cruzar texto. Trabajo y Viajes conservan su etiqueta
+Próximamente; no se presentan como funciones activas.
+
+03 Una conversación se convierte en aprendizaje
+Una única escena central con fondo oscuro integra el método y la corrección. En escritorio, cuando su
+parte superior alcanza el encabezado, el escenario permanece visible durante un recorrido
+equivalente a 180 % de la altura de la ventana. El progreso sigue al scroll (scrub), sin ajuste
+automático entre pasos. Tres actos ocupan ese recorrido:
+Progreso              Composición y mensaje
+
+                      Habla. Aparece una frase de ejemplo junto a la forma acústica: Yesterday I go to the cinema.
+0–33 %
+                      Etiqueta persistente: Demostración.
+
+                      Entiende. La palabra go se destaca y se muestra went como corrección, con una explicación
+34–66 %
+                      breve. La frase completa sigue disponible; el color no es la única señal.
+
+                      Vuelve a intentarlo. La corrección se convierte visualmente en un repaso guardado. Se muestra
+67–100 %
+                      una nueva pregunta y el CTA Practicar con mi voz.
+
+Cambios mediante opacidad, escala de 0.98 a 1 y desplazamientos de hasta 16 px. Al retroceder, el
+estado visual retrocede; no se guardan datos ni se reinicia audio. Ofrecer Ver los pasos sin animación
+y Saltar a planes. Los elementos invisibles no reciben foco.
+
+04 Del ejemplo a la acción
+La salida del estudio recupera el fondo cálido sin destellos ni transición de pantalla completa.
+Progreso, planes y preguntas frecuentes mantienen lectura directa. El cierre reutiliza una cinta
+estática y el CTA Probar una conversación. Sin contadores animados de resultados, reproducción
+automática ni esperas antes de comprar.
+
+
+
+
+                                                                                                 VERVO / BRIEF V1.1 / 16
+ESPECIFICACIÓN / 17
+
+
+Movimiento y referencia de diseño
+Integración de GSAP ScrollTrigger y Lenis
+Una sola instancia de Lenis y un solo ciclo de actualización coordinan el scroll público. Sincronizar sus
+cambios con ScrollTrigger según la documentación oficial; evitar bucles duplicados. Recalcular
+posiciones tras cargar fuentes e imágenes o cambiar la composición. Limpiar animaciones y escuchas
+al cambiar de ruta. No combinar Lenis con otro suavizador.
+La fijación se reserva para la escena 03 y solo se activa si cabe íntegra en la altura útil. Conservar
+barra de desplazamiento, enlaces internos, historial, teclado y desplazamiento directo a planes. El
+usuario puede invertir el sentido y salir en cualquier momento. Los diálogos y sus listas internas
+mantienen un desplazamiento independiente y correcto.
+
+Adaptación del movimiento
+Condición                  Comportamiento requerido
+
+                           Lenis con inercia moderada, recorrido de hero y una escena fijada. Si el escenario no cabe
+Escritorio desde 1200 px
+                           en altura, pasar al diseño vertical.
+
+                           Scroll táctil nativo, sin fijación ni parallax del hero. Los tres actos se muestran como
+Móvil y tableta
+                           bloques verticales completos. Entradas opcionales de 200–250 ms y hasta 8 px.
+
+                           Desactivar Lenis, scrub, fijación y parallax. Presentar todos los actos en orden; cambios
+Movimiento reducido        de estado inmediatos o fundidos breves. Atender también cambios de preferencia
+                           durante la visita.
+
+                           Scroll nativo. La voz, el teclado y los controles responden inmediatamente.
+Aplicación autenticada
+                           Microinteracciones breves y cancelables; sin escenas de scroll dentro de una práctica.
+
+Priorizar transformaciones y opacidad. Mantener pocas capas simultáneas y reservar espacio para los
+medios. Cargar los efectos como mejora progresiva: la portada sigue siendo legible si no se
+inicializan. No ocultar contenido esencial esperando una animación ni desplazar el botón mientras se
+intenta pulsar.
+
+Cómo incorporar el archivo de referencia
+El .md que entregará Kadesh es un insumo obligatorio antes de cerrar la propuesta visual. Conservar
+su nombre original y leerlo completo. Extraer reglas de composición, color, tipografía, movimiento,
+ejemplos y restricciones en una matriz: referencia → decisión adoptada → pantalla afectada. Distinguir
+requisitos explícitos de inspiraciones.
+Las instrucciones más recientes de Kadesh prevalecen. Este brief define los recorridos y criterios
+funcionales; el .md orienta la estética y precisa las referencias. Si hay una contradicción material,
+señalarla y resolverla antes de cerrar el diseño. Las skills ayudan a ejecutar esos criterios; no
+sustituyen la intención del proyecto.
+Registrar las decisiones de producto en PRODUCT.md y el sistema visual consolidado en DESIGN.md.
+Ambos deben apuntar al .md original y a los nodos de Figma utilizados. Mientras no se reciba la
+referencia, el diseño derivado de ella permanece pendiente; no inventar su contenido.
+
+
+
+
+                                                                                                 VERVO / BRIEF V1.1 / 17
+ESPECIFICACIÓN / 18
+
+
+Validación visual y entrega
+Claude Code debe iterar con Playwright sobre la web ejecutándose: observar, detectar, corregir y
+volver a comprobar lo afectado. Capturar Portada, Hoy, Sesión y Revisión en 390 y 1440 px; revisar
+además 320, 768 y 1024 px. Probar Chromium, Firefox y WebKit en los recorridos esenciales.
+Prueba                     Criterio de aceptación
+
+                           Registro, diagnóstico, práctica, corrección y repaso funcionan. El historial persiste al volver.
+Recorrido completo
+                           Ningún CTA principal queda sin destino.
+
+                           La escena se ve al 0, 33, 66 y 100 %; funciona al avanzar y retroceder. Planes, anclas, Atrás y
+Scroll y navegación
+                           cambios de ruta no dejan huecos ni elementos fijados.
+
+                           Comprobar micrófono denegado, carga, fallo de conexión, sesión vacía, límite de minutos y
+Estados reales
+                           pago pendiente mediante datos de prueba controlados.
+
+                           Orden de foco lógico; acciones visibles al enfocar; menú y diálogos operables. Sin recortes ni
+Teclado y adaptación
+                           scroll horizontal. El teclado móvil no tapa controles.
+
+                           El recorrido completo funciona con la preferencia activada. Todos los actos siguen legibles;
+Movimiento reducido
+                           no queda scroll suavizado ni sección fijada.
+
+                           Capturas con fuentes cargadas y datos estables, en el mismo entorno. Comparar con Figma
+Comparación visual
+                           y revisar diferencias; las referencias iniciales se inspeccionan antes de aceptarlas.
+
+
+Revisión del movimiento y cierre
+Las capturas estáticas no validan la fluidez. Revisar además un video de la portada con movimiento
+normal, interacción rápida y retroceso. Comprobar audio y tacto en dispositivos reales; WebKit
+automatizado no sustituye una prueba en Safari de iPhone. Medir los objetivos de la página 12 y
+corregir los problemas observados.
+Entregar el proyecto con un resumen de pruebas, capturas, recorrido grabado, vínculos a Figma y
+registro de decisiones de diseño. Distinguir qué se probó con servicios reales y qué usó simulaciones.
+Una demo de voz o cobro no acredita una integración de producción. El resultado final debe permitir
+practicar de principio a fin.
+
+Fuentes oficiales para la ejecución
+Consulta: 11 de noviembre de 2026. Los recorridos, proporciones y tiempos del guion son propuestas
+propias para VERVO. Verificar versiones y capacidades al iniciar el desarrollo.
+Emil Kowalski · Colección oficial de skills
+Impeccable · Documentación y comandos
+Figma · Servidor MCP oficial
+GSAP · ScrollTrigger
+Lenis · Integración oficial con GSAP
+Playwright · Comparaciones visuales
+
+
+
+
+                                                                                                     VERVO / BRIEF V1.1 / 18
+

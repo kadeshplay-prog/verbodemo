@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "skills": {
+    "animation-performance": {
+      "source": "emilkowalski/skills",
+      "ref": "4061b67b8d976a186aca118594f54b638c5f718a",
+      "sourceType": "github",
+      "skillPath": "skills/animation-performance/SKILL.md",
+      "computedHash": "cbd338b7c961d1a2f2f61a30905adf1db94206595e8da593fef1b44265d5d08f",
+      "installMode": "copy"
+    },
+    "choreograph": {
+      "source": "emilkowalski/skills",
+      "ref": "4061b67b8d976a186aca118594f54b638c5f718a",
+      "sourceType": "github",
+      "skillPath": "skills/choreograph/SKILL.md",
+      "computedHash": "2d76cff124bbbd01c46007e3ee6c971962288ca2daaf11e5d8455ece6c73e7fe",
+      "installMode": "copy"
+    },
+    "emil-design-eng": {
+      "source": "emilkowalski/skills",
+      "ref": "4061b67b8d976a186aca118594f54b638c5f718a",
+      "sourceType": "github",
+      "skillPath": "skills/emil-design-eng/SKILL.md",
+      "computedHash": "55735a70a886326ee8ba1dd4d1ee040e4e9503a536891467e4ed7e114a69b0dd",
+      "installMode": "copy"
+    },
+    "review-animations": {
+      "source": "emilkowalski/skills",
+      "ref": "4061b67b8d976a186aca118594f54b638c5f718a",
+      "sourceType": "github",
+      "skillPath": "skills/review-animations/SKILL.md",
+      "computedHash": "7d23a794b6cb0191a68485b87d546adc9bb5ea93aa4168b299e2fefeea940790",
+      "installMode": "copy"
+    }
+  }
+}
