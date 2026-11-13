@@ -6,7 +6,7 @@ Una conversación cotidiana, una corrección útil y una oportunidad para intent
 
 ## Probar en tu navegador
 
-URL privada asignada: **[Abrir VERVO](https://vervo-demo-kadesh.insightfullyre2.chatgpt.site)**. Su disponibilidad se confirma con el despliegue de la entrega. El alojamiento privado puede pedir iniciar sesión con la misma cuenta de ChatGPT propietaria del Site; eso es independiente del perfil de práctica.
+Demo privada desplegada y verificada: **[Abrir VERVO](https://vervo-demo-kadesh.insightfullyre2.chatgpt.site)**. El alojamiento puede pedir iniciar sesión con la misma cuenta de ChatGPT propietaria del Site; eso es independiente del perfil de práctica.
 
 1. Pulsa **Probar una conversación**.
 2. El nombre es opcional. Revisa los documentos, marca **las dos casillas independientes** y pulsa **Entrar a la demo**.

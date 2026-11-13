@@ -11,6 +11,7 @@ Ejecución final: 13 de noviembre de 2026, UTC. Resultados y checksums en [evide
 | Motores | Chromium 158.0.8127.18 escritorio/móvil emulado; Firefox 159.0; WebKit 27.2 |
 | Entorno anterior | **12/12** pruebas de la fixture técnica; evidencia separada en evidence/setup/ |
 | Integridad | 5 skills, 75 checksums, referencias y versiones exactas verificadas |
+| Copia limpia | npm ci y npm run build correctos desde un archivo del commit, sin reutilizar node_modules |
 | Formato y dependencias | Prettier correcto; npm audit --omit=optional: 0 vulnerabilidades informadas |
 | Impeccable | Detector sobre src/: 0 hallazgos; criterios de crítica/adaptación/pulido aplicados a capturas |
 | Accesibilidad automática | Axe, seis rutas en Chromium escritorio y móvil: 0 violaciones detectadas; no equivale a certificación WCAG |
@@ -55,4 +56,4 @@ APP_BASE_URL permite un servidor alternativo. Informes/trazas y resultados compl
 
 No se han validado autenticación, IA/STT/TTS remotos, sincronización, cobros/webhooks, soporte o recuperación real: no están conectados. Tampoco micrófono/auriculares físicos, Safari/iPhone real, lector de pantalla humano, zoom real al 200%, latencia de voz, Web Vitals p75 o perfil de frames. Cambiar el viewport no sustituye esos ensayos.
 
-Los ensayos con 10–15 usuarios, revisión pedagógica y revisión legal dependen de la siguiente fase. El alcance automatizado no afirma seguridad de producción ni conformidad WCAG completa. El alojamiento privado se verifica por la respuesta nativa del despliegue; su autenticación no está incluida en el recorrido local de Playwright.
+Los ensayos con 10–15 usuarios, revisión pedagógica y revisión legal dependen de la siguiente fase. El alcance automatizado no afirma seguridad de producción ni conformidad WCAG completa. El alojamiento privado quedó verificado por la respuesta nativa del despliegue con URL y estado succeeded; su autenticación no está incluida en el recorrido local de Playwright. El ZIP de GitHub se descargó e inspeccionó: incluye código, lockfile, skills y evidencia; excluye dependencias instaladas, secretos y temporales.

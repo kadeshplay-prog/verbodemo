@@ -12,13 +12,14 @@ Actualizado el 13 de noviembre de 2026, UTC. El usuario autorizó implementar la
 - Chromium, Firefox y WebKit abren realmente. Las 13 bibliotecas Debian necesarias se extraen en work/ con hashes y comprobación dinámica, sin sudo ni modificaciones del sistema.
 - npm audit --omit=optional: 0 vulnerabilidades informadas. No equivale a auditoría de seguridad de producción.
 - Rama chore/vervo-project-preparation y PR #1; sin fusión automática. ZIP desde la rama, excluidos node_modules, dist, binarios, secretos y temporales.
+- Instalación desde copia limpia: npm ci y npm run build correctos sin reutilizar node_modules. ZIP de GitHub descargado y revisado.
+- Demo alojada privada: https://vervo-demo-kadesh.insightfullyre2.chatgpt.site. Despliegue confirmado por el servicio; acceso con la cuenta propietaria, sin dominio personalizado. La PR registra la versión final.
 
 ## Configurado, pendiente de comprobar
 
 - Claude Code: skills, rutas y motor comprobados por terminal. Este entorno no incluye el cliente claude; abrir el repo allí para verificar carga de comandos/hooks.
 - Micrófono físico, altavoces/auriculares y Safari/iPhone real: deben probarse en el dispositivo del usuario. La prueba automatizada usa señal Web Audio y MediaRecorder real; el capturador del host no está disponible. La práctica escrita funciona.
 - Revisión humana de accesibilidad, pedagogía y usos con personas. Alcance documentado en docs/VALIDATION.md.
-- Alojamiento privado preparado en Sites: https://vervo-demo-kadesh.insightfullyre2.chatgpt.site. El resultado final y su versión se registran en la PR. Acceso con la cuenta propietaria; sin dominio personalizado.
 
 ## Bloqueado y qué falta para resolverlo
 
