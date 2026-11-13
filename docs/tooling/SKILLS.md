@@ -39,9 +39,9 @@ Ejemplos en el chat de Claude Code (no en bash):
 /impeccable polish la pantalla de cuenta
 ```
 
-Impeccable 4.8.2 agrupa sus capacidades bajo `/impeccable <comando>`: no se han inventado skills separadas `/audit` o `/polish`. Para cargar su contexto por terminal: `npm run tools:context`. En esta fase se ejecutó el contexto de Impeccable y se leyeron sus reglas de producto; no se atribuyen auditorías visuales a una web inexistente. El producto y la delegación de decisiones técnicas ya están descritos explícitamente por el usuario/brief.
+Impeccable 4.8.2 agrupa sus capacidades bajo `/impeccable <comando>`: no se han inventado skills separadas `/audit` o `/polish`. Para cargar su contexto por terminal: `npm run tools:context`. Durante la implementación se aplicaron contexto, craft-floor y playbooks de auditoría, adaptación y pulido; el detector de código devolvió cero hallazgos. La revisión visual se hizo sobre capturas reales de la aplicación, sin atribuir un certificado o puntuación de accesibilidad a ese detector.
 
-Los hooks oficiales se guardan en `.claude/settings.json` con una adaptación de rutas: caché dentro de `work/impeccable`, telemetría desactivada y aplicación de ediciones de Live en el chat. No hay permisos para saltar confirmaciones. Los agentes suministrados son recursos instalados; no se han ejecutado subagentes en esta preparación.
+Los hooks oficiales se guardan en `.claude/settings.json` con una adaptación de rutas: caché dentro de `work/impeccable`, telemetría desactivada y aplicación de ediciones de Live en el chat. No hay permisos para saltar confirmaciones. Los agentes suministrados son recursos instalados; no se han ejecutado subagentes.
 
 ## Mantenimiento deliberado
 

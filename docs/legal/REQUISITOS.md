@@ -1,10 +1,10 @@
-# Requisitos legales y minimización · preparación
+# Requisitos legales y minimización · demo y producción
 
-Todavía no hay formularios ni páginas de VERVO implementados. Los tres textos de esta carpeta son borradores internos; faltan los datos del responsable, países de oferta, proveedores y plazos reales. Completar y revisar esos puntos antes de publicar textos o recoger datos reales. El uso de MXN en la maqueta no determina por sí solo la ley aplicable.
+La demo tiene páginas públicas de términos, privacidad y cookies que describen sus funciones locales y limitaciones reales. Acceso y contratación simulada incluyen dos casillas independientes, sin premarcar, con enlaces junto a cada una; se conserva versión y fecha en el dispositivo. No hay cuenta real, correo obligatorio, cobro ni envío del audio. Los tres textos de esta carpeta siguen siendo borradores internos para producción: faltan responsable, países, proveedores y plazos. El uso de MXN no determina por sí solo la ley aplicable.
 
 ## Ubicación y aceptación
 
-Reservar rutas `/terminos`, `/privacidad` y `/cookies`, con enlaces en el pie público y en Cuenta. Acceso sin registro, buen ancho de lectura, fecha y versión, texto seleccionable y descarga opcional. Mantener en el servidor la versión histórica que aceptó cada persona.
+Rutas implementadas: `/#/terminos`, `/#/privacidad` y `/#/cookies`, con enlaces en el pie público y en Cuenta. Acceso sin perfil, buen ancho de lectura, versión y texto seleccionable. En producción, mantener en el servidor la versión histórica que aceptó cada persona.
 
 En registro, contratación y cualquier formulario que solicite aceptación legal, usar dos casillas independientes, vacías inicialmente:
 
@@ -26,7 +26,7 @@ Etiquetas asociadas, objetivos táctiles 48 px, teclado y foco visible. Los enla
 | Cookies estrictamente necesarias | Inventariar y justificar. En el marco español/europeo pueden estar exceptuadas de consentimiento; informar de su uso. No mostrar un banner de aceptación de analítica inexistente |
 | Analítica no exceptuada, publicidad o terceros opcionales | Si aplica el régimen europeo/español, bloquear antes de la elección. Aceptar, Rechazar y Configurar al mismo nivel y con visibilidad equivalente; categorías opcionales apagadas, sin consentimiento por continuar o hacer scroll |
 
-Recomendación inicial: operar sin analítica, publicidad ni embeds opcionales. La fixture técnica actual no usa cookies ni almacenamiento, como comprueba Playwright. Eso no acredita el inventario de la aplicación futura: autenticación, pagos, alojamiento, logs y proveedores pueden introducir otras tecnologías.
+La demo opera sin analítica, publicidad o embeds opcionales. Usa localStorage para textos/preferencias tras entrar e IndexedDB solo para grabaciones que se elige guardar. Ese almacenamiento permite la función solicitada; no se ha añadido un banner que pida aceptar analítica inexistente. La política identifica también que la sesión del alojamiento privado puede usar sus propias cookies. Antes de producción, revisar autenticación, pagos, logs y cada proveedor: el inventario local no acredita esas integraciones futuras.
 
 Si se activa una categoría opcional, conservar preferencia y versión, permitir revocar desde «Configurar cookies» y detener futuras cargas. Revisar también localStorage, SDK, píxeles y peticiones del proveedor. No cargar primero un script y ocultarlo después con un banner. Rechazar no debe impedir la práctica básica.
 
@@ -34,7 +34,8 @@ Si se activa una categoría opcional, conservar preferencia y versión, permitir
 
 | Flujo | Necesarios propuestos | Evitar o hacer opcionales |
 | --- | --- | --- |
-| Acceso | Correo y credencial gestionada por proveedor seguro | Nombre completo, teléfono, domicilio, documento, datos de voz |
+| Acceso demo | Dos acuses separados; nombre opcional, sin correo o contraseña | Identidad real, teléfono, domicilio, documento, datos de voz |
+| Acceso producción | Correo y credencial gestionada por proveedor seguro | Nombre completo y otros datos no necesarios |
 | Configuración | Meta, confianza y minutos de rutina | Perfil largo, empresa, escuela, fecha de nacimiento |
 | Conversación | Turnos y contexto estrictamente necesarios, modalidad oral/escrita | Audio permanente por defecto; transcripciones en analítica general |
 | Progreso | Sesiones, minutos propios, ayudas, objetivos y correcciones | Inferir identidad biométrica o un porcentaje global de dominio |
@@ -43,7 +44,7 @@ Si se activa una categoría opcional, conservar preferencia y versión, permitir
 
 ## Datos que faltan antes del lanzamiento
 
-Responsable y domicilio/contacto; países a los que se ofrece; canal de derechos y cancelación; encargados de IA/STT/TTS/auth/almacenamiento/pago, regiones y transferencias; plazos separados para turnos, transcripciones, grabaciones voluntarias, logs y facturación; eliminación y copias de seguridad; impuestos, reembolsos y condiciones comerciales aprobadas. No inventarlos ni solicitar claves durante esta preparación.
+Responsable y domicilio/contacto; países a los que se ofrece; canal de derechos y cancelación; encargados de IA/STT/TTS/auth/almacenamiento/pago, regiones y transferencias; plazos separados para turnos, transcripciones, grabaciones voluntarias, logs y facturación; eliminación y copias de seguridad; impuestos, reembolsos y condiciones comerciales aprobadas. No inventarlos ni solicitar claves para probar la demo.
 
 ## Fuentes oficiales consultadas
 

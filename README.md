@@ -1,84 +1,106 @@
-# VERVO · preparación del proyecto
+# VERVO · demo navegable
 
-Este repositorio contiene las herramientas, el brief, las decisiones iniciales y una prueba de navegador. **Todavía no contiene las pantallas ni la aplicación de práctica de inglés.** Ese límite responde a la instrucción de preparar primero el entorno. Figma se omite por decisión posterior del usuario.
+Una conversación cotidiana, una corrección útil y una oportunidad para intentarlo otra vez. Esta demo implementa el recorrido completo con el brief y el [DESIGN.md original del usuario](docs/references/DESIGN.md).
 
-El repositorio `kadeshplay-prog/verbodemo` estaba vacío al inspeccionarlo. Se crea un commit inicial vacío en `main` para disponer de una base de revisión; todos los archivos de esta preparación se proponen en `chore/vervo-project-preparation`, sin fusionarlos.
+**Es una demo de revisión:** tutor preparado, correcciones limitadas, diagnóstico sin evaluación de nivel, perfil local y pagos simulados. No hay autenticación de VERVO, IA ni cobros reales. El avance se guarda en este navegador; el audio, únicamente si eliges conservarlo en el dispositivo.
 
-## Instalar y comprobar
+## Probar en tu navegador
 
-Requisitos: Node **24.22.1**, npm **11.9.0**, Git y curl con CA válidas. Python 3 y `dpkg-deb` solo para la alternativa de bibliotecas locales de Debian. Las dependencias npm son locales y sus versiones están fijadas en `package-lock.json`; no hace falta instalar una CLI global.
+URL privada asignada: **[Abrir VERVO](https://vervo-demo-kadesh.insightfullyre2.chatgpt.site)**. Su disponibilidad se confirma con el despliegue de la entrega. El alojamiento privado puede pedir iniciar sesión con la misma cuenta de ChatGPT propietaria del Site; eso es independiente del perfil de práctica.
+
+1. Pulsa **Probar una conversación**.
+2. El nombre es opcional. Revisa los documentos, marca **las dos casillas independientes** y pulsa **Entrar a la demo**.
+3. Completa la configuración. En audio puedes elegir **Seguir por escrito**, sin permiso de micrófono.
+4. Completa u omite el diagnóstico. Abre **¿Qué tal tu fin de semana?**.
+5. Escribe `Yesterday I go to the cinema.`, envía y pulsa **Terminar y revisar**.
+6. Pulsa **Practicar esta frase** y escribe `Last weekend I went to the park.`. Visita **Repasar** y **Mi progreso**.
+7. Recarga: el avance sigue guardado. **Cuenta** permite exportar los textos, borrar audios y restablecer la demo.
+
+La página **Qué puedes probar** contiene la guía. Puedes simular un plan confirmado, pendiente o fallido sin proporcionar datos financieros.
+
+## Ejecutar en tu equipo
+
+Requisitos comprobados: Node **24.22.1**, npm **11.9.0** y Git. No necesitas claves ni una CLI global.
 
 ```bash
 git clone --branch chore/vervo-project-preparation https://github.com/kadeshplay-prog/verbodemo.git
 cd verbodemo
 npm ci
-npm run tools:prepare
-npm run setup:check
-npm run browsers:install
+npm run dev
 ```
 
-En el entorno cloud utilizado, Debian 13 amd64 sin sudo, faltaban bibliotecas de WebKit. Se preparó esta alternativa local:
+Abre **http://localhost:5173** en ese mismo equipo. En Codespaces, abre esta rama, ejecuta los comandos npm y reenvía el puerto 5173 desde **Ports**, con visibilidad **Private**. Utiliza la URL HTTPS que genere GitHub: localhost de otra máquina no es accesible desde tu navegador.
+
+Para probar la compilación de producción:
 
 ```bash
-npm run browsers:deps:debian
+npm run build
+npm run preview
+```
+
+Abre **http://localhost:4174**. Las rutas con `#` permiten recargar pantallas interiores en alojamiento estático sin configurar redirecciones.
+
+## Qué funciona
+
+| Recorrido | Implementación de la demo |
+| --- | --- |
+| Público | Portada, método, situaciones, planes, ayuda y guía de prueba |
+| Movimiento | GSAP ScrollTrigger con scrub y retroceso, Lenis en escritorio; tres actos completos sin pin en móvil y movimiento reducido |
+| Acceso/configuración | Nombre opcional, dos casillas con enlaces, registro de versión/fecha, cuatro pasos y perfil local |
+| Diagnóstico | Pregunta escrita y comprensión preparadas, opción de omitir, sin puntuación de nivel |
+| Biblioteca/ruta | 24 situaciones editoriales, búsqueda, filtros, detalle, expresiones y cuatro semanas |
+| Sesión | Turnos preparados, texto, pistas, traducción, voz del navegador, pausa, salida y reanudación |
+| Audio | MediaRecorder y medidor de audio real donde el navegador los admita; escucha y guardado voluntario local |
+| Revisión/repaso | Reglas de ejemplo, nuevo intento, cuaderno, notas y eliminación |
+| Progreso | Conversaciones y turnos propios, segundos grabados y repasos; sin porcentaje de fluidez |
+| Cuenta/legal | Preferencias, exportación JSON, eliminación de datos, simulación de plan/cancelación y políticas públicas |
+
+Las correcciones reconocen ejemplos de pasado con `go → went`, `I am agree → I agree` y `he don’t → he doesn’t`. No sustituyen un análisis lingüístico; no marcar una observación no significa que la respuesta se haya evaluado como correcta. El audio no se transcribe ni evalúa: para probar sugerencias se escribe también el texto.
+
+## Pruebas
+
+```bash
+npm run typecheck
+npm run build
+npm run browsers:install
 npm test
 ```
 
-El script descarga los paquetes fijados en `docs/tooling/debian-browser-libs.lock.json` desde Debian por HTTPS, verifica SHA-256 y extrae en `work/browser-libs/`. No modifica APT ni el sistema. Verifica con carga dinámica las bibliotecas requeridas. Playwright consulta `ldconfig` para parte de su preflight y no ve bibliotecas locales: solo después de esa comprobación se omite ese preflight; las pruebas abren realmente los navegadores con `LD_LIBRARY_PATH` local.
-
-En otros sistemas compatibles, instalar las dependencias mediante el administrador del entorno y el [procedimiento oficial de Playwright](https://playwright.dev/docs/browsers#install-system-dependencies). Por ejemplo, con permisos administrativos: `npm exec -- playwright install-deps chromium firefox webkit`. No ejecutar el script Debian en otra distribución. Si solo se quiere comprobar Chromium: `npm run test:setup`.
-
-`tools:prepare` restaura el motor de Impeccable fijado por la copia versionada de la skill. Las skills, referencias y licencias ya están en el repo; este comando no las actualiza. Los binarios y navegadores reinstalables quedan ignorados por Git. Ningún paso de esta fase requiere una clave o contraseña; `.env.example` documenta el único puerto opcional. Los scripts leen `SETUP_PORT` del entorno, sin cargar `.env` automáticamente.
-
-## Comandos disponibles
-
-| Comando | Resultado |
-| --- | --- |
-| `npm run setup:check` | Integridad de skills/documentos, rutas, versiones y ausencia de dependencias de app prematuras |
-| `npm run tools:prepare` | Motor oficial de Impeccable local con checksum verificado |
-| `npm run tools:context` | Contexto del proyecto mediante el launcher de la skill |
-| `npm run browsers:install` | Chromium, Firefox y WebKit de la versión de Playwright fijada |
-| `npm run browsers:deps:debian` | Bibliotecas de usuario para este Debian 13 amd64 |
-| `npm test` | Pruebas técnicas en tres motores; incluye escritorio y móvil en Chromium |
-| `npm run test:setup` | Comprobación técnica en Chromium 1440 y 390 px |
-| `npm run test:report` | Informe HTML local de la última ejecución |
-| `npm run preview:setup` | Servidor de comprobación en puerto 4173; no es la web de VERVO |
-
-La fixture verifica apertura, interacción, teclado, preferencia de movimiento reducido, anchos 320/390/768/1024/1440, ausencia de cookies/peticiones externas y captura. Las imágenes se escriben en `evidence/setup/`; trazas e informes temporales, en `work/`. Resultado real y límites en `docs/tooling/STATUS.md`.
-
-## Revisar desde un navegador
+En este **Debian 13 amd64 sin sudo**, antes de npm test:
 
 ```bash
-npm run preview:setup
+npm run browsers:deps:debian
 ```
 
-En el mismo equipo: `http://localhost:4173/setup/`. `GET /healthz` devuelve `{"status":"ok","scope":"tooling-only"}`. El servidor solo expone la fixture y salud; no sirve el repositorio, el brief ni `.env`.
+El instalador extrae 13 paquetes fijados y verificados en work/, comprueba la carga dinámica y enlaza las bibliotecas ausentes dentro del bundle local de WebKit. No cambia el sistema. Su preflight basado en ldconfig se omite solo tras verificar las bibliotecas; los navegadores se abren realmente. En otra distribución, usar el [procedimiento oficial de Playwright](https://playwright.dev/docs/browsers#install-system-dependencies) con el administrador del entorno.
 
-Este entorno no ofrece una URL externa/port forwarding verificada para este proceso. No se ha publicado un dominio ni una aplicación. Para una vista previa privada sin dominio, abrir esta rama en GitHub Codespaces, ejecutar los comandos anteriores y `npm run preview:setup`, ir a **Ports → Forward a port → 4173**, conservar visibilidad **Private** y abrir el enlace que Codespaces genere. No confundir `localhost` con un enlace accesible desde otro equipo. Esta vista muestra únicamente la comprobación técnica; la preview de VERVO se preparará cuando exista la aplicación.
+Las pruebas de aplicación usan la **compilación de producción**: ejecutar build antes. APP_BASE_URL permite apuntar a otro servidor de prueba. Cubren recorrido, persistencia, casillas, filtros, fallos, pagos simulados, movimiento reducido, scroll reversible y accesibilidad automática. La prueba de voz aporta una señal sintética de Web Audio a MediaRecorder en Chromium; no acredita el capturador de micrófono físico, que no está disponible en este host, ni Safari/iPhone real.
 
-El despliegue final no tiene comando aún porque no se ha elegido ni creado la aplicación. Al implementarla se añadirán scripts `dev`, `build`, `start`, variables reales de los adaptadores y un procedimiento de preview del proveedor elegido. No utilizar el servidor de pruebas como servidor de producción ni habilitar publicación automática en esta fase.
+Capturas y vídeo: evidence/app/. Informes y trazas temporales: work/app-test-results/, work/app-report/, work/a11y/. Resultados y límites: docs/VALIDATION.md. El harness anterior se conserva con `npm run test:tooling` y `npm run preview:setup`; evidence/setup/ pertenece a esa comprobación técnica.
 
-## Documentos y recursos
+## Arquitectura
 
-- `CLAUDE.md`: instrucciones breves para continuar en Claude Code.
-- `PRODUCT.md`: público, recorridos, P0/P1, decisiones provisionales e integraciones.
-- `DESIGN.md`: sistema base del brief y guion de GSAP ScrollTrigger/Lenis.
-- `docs/references/`: PDF original, transcripción completa y matriz de trazabilidad. **Falta el `.md` de referencia original.**
-- `.claude/skills/`: las cuatro skills oficiales de Emil y el bundle de Impeccable.
-- `docs/tooling/SKILLS.md`: uso, versiones y mantenimiento. Claude Code no está instalado en este entorno; sus hooks aún deben comprobarse dentro de ese cliente.
-- `docs/tooling/FIGMA.md`: disponibilidad observada, alcance omitido y enlace necesario si se retoma.
-- `docs/legal/`: requisitos y borradores internos de términos, privacidad y cookies. Aún no son páginas ni políticas listas para publicar.
-- `docs/VALIDATION.md`: aceptación posterior de los recorridos de VERVO.
-- `third_party/`: licencias y referencias complementarias.
+React, TypeScript, Vite y React Router con rutas hash. CSS por capas, Lucide y fuentes locales Manrope y Source Serif 4 con sus licencias. localStorage conserva textos/preferencias; IndexedDB, grabaciones elegidas. Pantallas interiores cargadas bajo demanda. No hay backend, analítica ni publicidad en la aplicación.
 
-Las skills de Emil proceden del commit fijado en `skills-lock.json`; Impeccable 4.8.2 se instaló según su [tutorial oficial](https://impeccable.style/tutorials/getting-started/). Su motor de skill es 0.1.21. No se ha usado una instalación global ni enlaces a los clones de investigación.
+src/components/ contiene estructura, diálogo, grabador y escena; src/pages/, pantallas; src/lib/, contenido, estado y audio. GSAP y Lenis tienen versiones exactas y lockfile. Una sola instancia Lenis usa el ticker GSAP y se destruye al salir de la portada o activar movimiento reducido. La app utiliza scroll nativo.
 
-## Siguiente fase y límites
+Skills oficiales en .claude/skills/, con licencias y checksums. Restaurar el motor es opcional para ejecutar la web:
 
-Antes de cerrar diseño falta el `.md` original. La próxima fase creará la aplicación y añadirá `gsap` y `lenis` a sus dependencias de ejecución; ScrollTrigger forma parte de GSAP. Documentación oficial: [ScrollTrigger](https://gsap.com/docs/v3/Plugins/ScrollTrigger/) y [Lenis con GSAP](https://github.com/darkroomengineering/lenis#gsap-scrolltrigger).
+```bash
+npm run tools:prepare
+npm run setup:check
+```
 
-La portada usará scroll vinculado y reversible conversación→corrección→repaso; la app, móvil y movimiento reducido conservan scroll nativo según el brief. Estos efectos aún no están implementados.
+CLAUDE.md orienta futuras sesiones; PRODUCT.md y DESIGN.md consolidan las decisiones y sus fuentes. Figma sigue omitido por petición del usuario.
 
-Tampoco existen todavía acceso, voz, diagnóstico, sesiones, correcciones, progreso, cuenta o cobros, reales o simulados. Faltan proveedores y credenciales de servidor, 24 fichas revisadas, audios autorizados, responsable legal, países, retención y oferta aprobada. Solicitar únicamente los datos imprescindibles al iniciar cada integración; nunca secretos en chat o Git.
+## Alojamiento y Git
 
-La entrega completa posterior incluirá código de aplicación, assets, componentes, políticas finales, `.env.example` de los servicios elegidos, recorridos de Playwright, capturas Portada/Hoy/Sesión/Revisión a 1440/390 y vídeo de scroll. Publicación en un dominio solo cuando el usuario la solicite.
+.openai/hosting.json identifica el Site privado y dist/ como salida estática. Para actualizar: validar/compilar, conservar el código en Git, sincronizar ese commit con el repositorio fuente del Site, empaquetar el manifiesto y dist/, guardar versión y desplegar preservando acceso privado. Credenciales solo en memoria/stdin, nunca en archivos, argumentos o logs. No cambiar ID o audiencia para resolver errores.
+
+La rama y PR conservan preparación e implementación sin fusionar automáticamente. dist, node_modules, motores, grabaciones y temporales se excluyen del ZIP de GitHub. La entrega es una demo alojada privada, sin dominio personalizado ni lanzamiento comercial.
+
+## Pendiente para producción
+
+Autenticación/recuperación reales, backend y sincronización, STT/tutor/TTS, pagos/webhooks idempotentes, soporte, oferta aprobada, revisión docente y audios autorizados. También responsable legal, países, proveedores, transferencias, bases jurídicas y retenciones. Los documentos visibles describen la demo; deben completarse y revisarse antes de recoger datos de producción.
+
+.env.example documenta que la demo no necesita secretos. Las variables de proveedores se definirán con sus adaptadores del lado servidor al elegirlos. No uses contraseñas, datos financieros o información sensible para probarla.

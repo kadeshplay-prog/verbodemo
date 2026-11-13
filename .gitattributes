@@ -11,3 +11,4 @@
 .claude/agents/** -text -whitespace
 third_party/** -text -whitespace
 docs/references/*.txt -text -whitespace
+docs/references/DESIGN.md -text -whitespace

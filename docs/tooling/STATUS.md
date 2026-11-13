@@ -1,32 +1,29 @@
-# Estado de entrega · preparación
+# Estado de entrega · demo navegable
 
-Fecha de referencia del usuario: 11 de noviembre de 2026, America/Mexico_City. Las marcas automáticas de ejecución en `evidence/setup/results.json` están en UTC.
+Actualizado el 13 de noviembre de 2026, UTC. El usuario autorizó implementar la demo después de completar la preparación. El DESIGN.md posterior se recibió y se conserva íntegro en docs/references/.
 
 ## Instalado y comprobado
 
-- Repositorio `kadeshplay-prog/verbodemo` inspeccionado vacío. Base inicial vacía en `main`; cambios de preparación en `chore/vervo-project-preparation`.
-- Node 24.22.1, npm 11.9.0, Git 2.52.0, Python 3.12.14 y Poppler 25.03 disponibles. pnpm 11.25.0 también disponible; este proyecto usa npm. No se necesita una instalación global de las herramientas del proyecto.
-- Cuatro skills oficiales de Emil, copiadas con sus recursos desde un commit fijado y verificadas frente al origen; Impeccable skill 4.8.2 instalado con el CLI oficial 4.8.2 y su motor fijado 0.1.21. El CLI `skills list` detecta las cinco en el ámbito del proyecto. Impeccable tiene manifiesto de procedencia propio, porque no se instaló a través de `skills`.
-- 74 checksums de recursos y brief, frontmatter, referencias locales y versiones exactas comprobados mediante `npm run setup:check`.
-- Restauración desde una copia limpia del índice Git: `npm ci`, descarga del motor fijado con verificación y `setup:check` pasan sin copiar `node_modules`, binarios o cachés existentes.
-- Playwright 1.65.0: **12/12 pruebas técnicas pasan**, Chromium escritorio/móvil, Firefox y WebKit. Capturas reales en `evidence/setup/`; las de 1440 y 390 px de Chromium se inspeccionaron visualmente. Incluye teclado, preferencia de movimiento reducido y lectura a cinco anchos. Resumen reproducible en `evidence/setup/results.json`.
-- Las dependencias ausentes de WebKit se resolvieron con 13 paquetes Debian fijados, descargados y extraídos localmente, verificación SHA-256, carga dinámica y `ldd`. El wrapper de MiniBrowser sustituye `LD_LIBRARY_PATH`: el instalador enlaza solo bibliotecas ausentes en su `sys/lib` local, sin editar el wrapper oficial. La omisión del preflight basado en `ldconfig` se documenta en README; el lanzamiento real de los tres motores sí se probó.
-- `npm audit --omit=optional`: sin vulnerabilidades informadas. No equivale a una auditoría de seguridad de una aplicación futura.
-- Brief completo de 18 páginas conservado con su nombre original y transcripción; PRODUCT.md, DESIGN.md, CLAUDE.md, README y `.env.example` preparados.
+- Node 24.22.1, npm 11.9.0, Git 2.52.0 y Python 3.12.14. React/TypeScript/Vite con npm y lockfile, sin instalaciones globales necesarias.
+- Cuatro skills oficiales de Emil fijadas al commit 4061b67b8d976a186aca118594f54b638c5f718a; Impeccable 4.8.2/motor 0.1.21. Recursos/licencias en el repo. Integridad: 5 skills y 75 checksums.
+- GSAP 3.15.1 con ScrollTrigger y Lenis 1.3.27 implementados, sincronizados y limpiados al navegar. Tres actos reversibles, lectura sin animación y adaptación a movimiento reducido/móvil.
+- Demo con páginas públicas y recorridos interiores, dos casillas legales, almacenamiento local, grabador opcional y pagos explícitamente simulados. README contiene instrucciones, fuentes y limitaciones.
+- Compilación/TypeScript/formato correctos. Playwright: **26 aprobadas, 6 omisiones previstas, 0 fallidas**; fixture técnica 12/12. Capturas/vídeo inspeccionados. Axe: seis rutas en escritorio/móvil, sin violaciones detectadas.
+- Chromium, Firefox y WebKit abren realmente. Las 13 bibliotecas Debian necesarias se extraen en work/ con hashes y comprobación dinámica, sin sudo ni modificaciones del sistema.
+- npm audit --omit=optional: 0 vulnerabilidades informadas. No equivale a auditoría de seguridad de producción.
+- Rama chore/vervo-project-preparation y PR #1; sin fusión automática. ZIP desde la rama, excluidos node_modules, dist, binarios, secretos y temporales.
 
 ## Configurado, pendiente de comprobar
 
-- Hooks portables y comandos en Claude Code: archivos y ejecutable comprobados, pero el cliente `claude` no está instalado. Verificar carga de skills y ejecución de hooks al abrir el proyecto en Claude Code.
-- GSAP ScrollTrigger y Lenis: guion, sincronización, limpieza, reversibilidad, adaptación y accesibilidad documentados; se instalarán al crear la aplicación. No hay animaciones implementadas aún.
-- Términos, privacidad y cookies: borradores internos y especificaciones de páginas, minimización y dos casillas independientes con enlaces. Faltan políticas finales y formularios reales; el acuse de privacidad no se confunde con consentimiento para finalidades opcionales.
-- Recorridos de acceso, diagnóstico, voz, revisión, repaso, progreso, cuenta y cobro: plan de aceptación preparado; sin código ni servicios reales o simulados en esta fase.
-- Vista previa: servidor técnico comprobado por las pruebas, con pasos de apertura en localhost o Codespaces. No existe todavía una preview de VERVO ni un enlace externo verificado para este entorno. No se ha publicado un dominio.
+- Claude Code: skills, rutas y motor comprobados por terminal. Este entorno no incluye el cliente claude; abrir el repo allí para verificar carga de comandos/hooks.
+- Micrófono físico, altavoces/auriculares y Safari/iPhone real: deben probarse en el dispositivo del usuario. La prueba automatizada usa señal Web Audio y MediaRecorder real; el capturador del host no está disponible. La práctica escrita funciona.
+- Revisión humana de accesibilidad, pedagogía y usos con personas. Alcance documentado en docs/VALIDATION.md.
+- Alojamiento privado preparado en Sites: https://vervo-demo-kadesh.insightfullyre2.chatgpt.site. El resultado final y su versión se registran en la PR. Acceso con la cuenta propietaria; sin dominio personalizado.
 
 ## Bloqueado y qué falta para resolverlo
 
-- Cierre del diseño conforme al `.md`: falta el archivo original de referencia, que no fue adjuntado ni estaba en el repositorio. Incorporarlo conservando su nombre y completar la matriz de trazabilidad.
-- Publicar textos legales definitivos y activar servicios: faltan responsable/contacto y países, proveedores/retenciones, oferta comercial aprobada, contenido pedagógico y audios autorizados. Las claves de los proveedores se configurarán en el servidor al implementar cada integración, sin ponerlas en chat o Git. Esto no bloquea la preparación entregada.
-- URL compartida directa: el catálogo actual no ofrece una herramienta de port forwarding comprobada. El README da pasos para obtener una URL privada de prueba en Codespaces cuando se quiera abrir la fixture desde otro equipo.
-- La carpeta de salidas indicada por el cliente no es escribible por este usuario (`/codex`: permiso denegado). La rama de GitHub permite descargar el ZIP de los archivos versionados sin `node_modules`, secretos, navegadores ni archivos temporales.
+- Servicios de producción: elegir proveedores y configurar secretos del lado servidor para identidad, BD, STT/tutor/TTS, correo y pagos. No hacen falta claves para probar la demo.
+- Documentos comerciales definitivos: faltan responsable/contacto, países, oferta aprobada, proveedores, transferencias, retenciones, impuestos y reembolsos. Los textos públicos describen la demo, sin inventar esos datos.
+- Archivo adjunto local: la carpeta de salida bajo /codex no es escribible. GitHub ofrece el ZIP del proyecto versionado como alternativa.
 
-Figma queda **omitido por decisión del usuario**, no bloqueado: se documentaron las herramientas observadas sin afirmar autenticación o acceso a un archivo. No hace falta un enlace de Figma para continuar esta fase.
+Figma queda **omitido por decisión del usuario**. No se afirma acceso autenticado o verificación de frames. El brief y el .md original sí están presentes, leídos y relacionados con PRODUCT.md/DESIGN.md.

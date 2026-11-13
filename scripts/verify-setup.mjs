@@ -49,10 +49,10 @@ for (const [name, version] of Object.entries(packageJson.devDependencies)) {
   assert(/^\d+\.\d+\.\d+$/.test(version), `Versión no exacta: ${name}`);
   assert.equal(packageLock.packages[''].devDependencies[name], version, `Lock desincronizado: ${name}`);
 }
-assert(!packageJson.dependencies, 'Todavía no debe existir un paquete de aplicación.');
-assert(!packageJson.devDependencies.gsap && !packageJson.devDependencies.lenis, 'GSAP y Lenis se añaden al crear la aplicación.');
+for (const [name, version] of Object.entries(packageJson.dependencies || {})) { assert(/^\d+\.\d+\.\d+$/.test(version), `Versión no exacta: ${name}`); assert.equal(packageLock.packages[''].dependencies[name], version); }
+assert(packageJson.dependencies.gsap && packageJson.dependencies.lenis, 'La demo requiere GSAP ScrollTrigger y Lenis.');
 assert.equal(manifest.figma.status, 'deferred_by_user');
-assert.equal(manifest.missingUserReference.status, 'not_received');
+assert.equal(manifest.userReference.status, 'received'); assert.equal(manifest.userReference.originalFilename, 'DESIGN.md');
 const settings = JSON.parse(await read('.claude/settings.json'));
 for (const phase of ['SessionStart', 'PostToolUse', 'Stop']) {
   assert(settings.hooks[phase]?.length, `Falta hook: ${phase}`);
@@ -69,4 +69,4 @@ assert.equal(JSON.parse(await read('.impeccable/config.json')).telemetry, false)
 const skillEntries = await readdir(path.join(root, '.claude/skills'));
 assert.equal(skillEntries.length, 5);
 console.log(`Preparación correcta: 5 skills, ${checksums} checksums, referencias locales, 18 páginas del brief, versiones exactas y hooks portables.`);
-console.log('Alcance: herramientas. Falta el .md original; Figma aplazado; ninguna pantalla de VERVO implementada.');
+console.log('Alcance: demo navegable local, referencia DESIGN.md recibida, GSAP y Lenis instalados; Figma aplazado.');

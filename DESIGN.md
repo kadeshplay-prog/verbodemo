@@ -1,68 +1,74 @@
-# VERVO · base de diseño y movimiento
+# VERVO · sistema visual de la demo
 
-Estado: especificaciones documentales del brief, sin pantallas diseñadas o implementadas. El `.md` de referencia falta; no se cierra todavía la dirección visual. Figma se omite por decisión del usuario.
+Producto/recorridos: docs/references/Brief_Visual_Contenido_VERVO.pdf, leído completo. Referencia estética más reciente: **docs/references/DESIGN.md**, conservada íntegra con el nombre original. Describe Steep y se interpreta como referencia, no como componentes o activos ajenos para copiar.
 
-## Autoridad y trazabilidad
+## Contradicción y decisión
 
-Petición reciente del usuario → brief funcional/visual → `.md` original cuando se reciba → decisiones específicas → criterios de las skills. No hay contradicción funcional material detectada. La solicitud de entrega completa corresponde a una fase futura: la indicación explícita actual limita el trabajo a preparación. Si una recomendación genérica de Impeccable desaconseja fondos cálidos o verdes por frecuentes, prevalece la identidad explícita del brief.
+El brief proponía verde, fondo cálido y Manrope como única familia. El .md posterior pide blanco, titulares serif regulares, controles oscuros y melocotón. Siguiendo la prioridad indicada por el usuario, **la demo adopta esa estética posterior** y conserva funciones, contenido, estados y guion de scroll del brief.
 
-Matriz de requisitos, pantallas y fuentes: `docs/references/README.md`. Registrar allí cada regla del `.md` y el nodo de Figma si se reanuda esa integración. No sustituir una referencia ausente con otra inventada.
+El estudio permanece oscuro, ahora en negro tinta. La voz aparece como marca y datos dentro del producto; no se añaden fotos, avatares o ilustraciones decorativas. Figma sigue omitido: no se atribuyen nodos o comparaciones inexistentes.
 
-## Identidad y composición base
+## Referencia → decisión → pantalla
 
-La voz toma forma: una cinta acústica abstracta conecta conversación, corrección y repaso. En portada es una demostración editorial; dentro del estudio solo reacciona al audio real. No representa una persona tutora ni finge escucha.
+| Fuente | Decisión | Aplicación |
+| --- | --- | --- |
+| Signifier regular/itálica | Source Serif 4 local, alternativa libre admitida por la referencia; peso 400 | Titulares públicos/interiores y frases |
+| Söhne/UI sobria | Manrope local, continuidad del brief; sin fingir licencias de Signifier/Söhne | Controles, navegación y formularios |
+| Blanco/tinta/melocotón | #fff, #17191c, #f2f2f3, #fafafb, #fbe1d1, #5d2a1a | Sistema compartido; acento protagonista escaso |
+| Gris secundario | #62646b, más oscuro que el original para legibilidad | Texto secundario y ayudas |
+| Fragmentos flotantes | Conversación, corrección y repaso con UI propia y etiqueta de ejemplo | Hero |
+| Radios y composición | Paneles 24px, campos 16px, botones cápsula; contenedor 1200px | Público y app |
+| Brief pp. 9–12 | Estudio negro, controles estables, audio real y alternativa escrita | Sesión |
+| Brief pp. 16–17 y petición reciente | GSAP ScrollTrigger y Lenis efectivos, reversibles y con limpieza | Hero y método |
+| Adición legal | Documentos públicos, dos casillas y enlaces/versiones separados | Acceso, cuenta y plan de ejemplo |
 
-Composición asimétrica, titulares amplios, espacio y capturas reales del producto cuando existan. Portada: proporción 5/7 entre texto y estudio. Superficies claras para explorar y gestionar; estudio oscuro para conversar. Sin partículas, banderas decorativas, avatares fotorrealistas ni cuadrículas repetidas en cada sección.
+Display hasta 96px, serif regular e itálica, móvil 61–68px. Títulos interiores 39–56px, móviles 35–43px. Las fuentes y licencias se sirven localmente. No hay texto convertido en imagen.
 
-| Rol | Valor del brief |
-| --- | --- |
-| Fondo / superficie | `#F6F7F2` / `#FFFFFF` |
-| Texto / secundario | `#15241F` / `#52635B` |
-| Marca / hover | `#14634D` / `#0F4F3D` |
-| Estudio / panel oscuro | `#0D211C` / `#17382E` |
-| Lima / texto en estudio | `#D7F57B` / `#F6F7F2`, `#C4D2CA` |
-| Borde funcional / decorativo | `#7A8D83` / `#D8E0D8` |
-| Alerta / error | `#8A4B08` / `#B42318`, siempre con texto e icono |
+La portada combina texto con UI flotante; biblioteca, tarjetas funcionales; ruta, unidades verticales; progreso, evidencia individual; estudio, diálogo y ayudas. No se repite la misma cuadrícula en todas las páginas ni se inventan métricas comerciales.
 
-Familia propuesta Manrope 400/500/600/700, alojada localmente cuando se añada con licencia; fallback sistema. Titular principal 80/84 px en escritorio y 44/48 en móvil; sección 48/54 y 32/38; título de pantalla 32/40 y 26/34. Cuerpo público 18/28, app y móvil 16/24; ayudas 14/20. Ajustar de forma fluida sin convertir textos en imágenes.
+## Movimiento implementado
 
-Máximo público 1280 px; 12 columnas y separación 24 px en escritorio. App: barra lateral 240 px, margen 32 px. Formularios hasta 560 px y lectura hasta 720 px. Móvil: 16–20 px y una columna. Espacios 4, 8, 12, 16, 24, 32, 48, 64, 96; separación entre secciones 96 px / 56 px móvil. Radios: campos 12 px, botones 16 px, paneles 24 px. Profundidad discreta, no vidrio sobre lectura extensa.
+| Elemento | Papel y ritmo | Motivo |
+| --- | --- | --- |
+| Titular y CTA | Estáticos desde el primer render | Lectura y acción inmediatas |
+| Hero | Primeros 400px; escala .96→1, y 12→−12px | Un solo movimiento de apoyo |
+| Acto 1 | Primer tercio | Frase de demostración |
+| Acto 2 | Segundo tercio | go→went y explicación completa |
+| Acto 3 | Último tercio | Repaso y CTA de práctica |
+| Cambios internos | Hasta 16px, autoAlpha y scrub lineal | Solapamiento reversible, sin colas |
+| App | Respuesta inmediata y press/color breves | Uso frecuente sin espera |
+| Medidor | Datos AudioContext sobre barras individuales | Solo audio capturado, sin fingir escucha |
 
-## Componentes y estados futuros
+MethodStory registra ScrollTrigger y crea una sola instancia Lenis con autoRaf:false. Un ticker GSAP convierte segundos a milisegundos; el scroll se sincroniza con ScrollTrigger. Se recalcula tras fuentes y se limpia instancia/ticker/timeline mediante matchMedia. La fijación dura 180% de la altura visible y solo se activa desde 1200px si cabe bajo el encabezado.
 
-Botón público 52 px y app 48 px; estado normal, hover, foco, pulsado, carga y deshabilitado. Campos con etiqueta persistente, ayuda y error asociado. Modales con foco inicial y devolución al cerrar. Tarjetas con categoría, objetivo, dificultad, tiempo, estado y acción inequívoca. Una familia de iconos de 24 px.
+El retroceso devuelve el estado visual sin escribir datos ni reproducir audio. Actos inactivos fuera del foco con inert y aria-hidden. Hay lectura sin animación y salida directa a planes. Las anclas y las teclas de navegación interrumpen la inercia; las anclas también mueven el foco al destino.
 
-Micrófono de 72 px y controles de voz estables: Listo, Grabando, Procesando, Respondiendo, Pausado, No se entendió, Sin conexión y Sin permiso. Cada estado tiene texto y recuperación; no usar porcentajes falsos de procesamiento. El medidor nunca bloquea enviar, cancelar, pausar o salir.
+Timeline normalizada al recorrido de 180vh (tiempo controlado por scroll, no segundos):
 
-Términos, privacidad y cookies tendrán páginas legibles, enlaces de pie y acceso desde cuenta. Las dos casillas legales serán independientes, sin premarcar, con enlace junto a cada una; foco visible, errores específicos y apertura del documento sin perder el formulario. Detalle semántico y finalidades en `docs/legal/REQUISITOS.md`.
+| Elemento | Rol | Inicio | Duración | Movimiento | Relación |
+| --- | --- | --- | --- | --- | --- |
+| Acto 1 | Protagonista | 0 | Lectura hasta .27 | Estático | Contexto antes de la corrección |
+| Salida 1 | Apoyo | .27 | .04 | Opacidad y y −16px | Solapa con entrada 2 |
+| Entrada 2 | Protagonista | .29 | .04 | Opacidad y y 16→0px | Completa en .33 |
+| Salida 2 | Apoyo | .60 | .04 | Opacidad y y −16px | Solapa con entrada 3 |
+| Entrada 3 | Protagonista | .62 | .04 | Opacidad y y 16→0px | Completa en .66 |
+| Acto 3 | Protagonista | .66 | Lectura hasta 1 | Estático | Oportunidad para practicar |
 
-## Movimiento previsto · GSAP ScrollTrigger y Lenis
+Titulares, navegación y controles de práctica permanecen estáticos: se leen y usan repetidamente. La superficie de las tarjetas tampoco se desplaza; conserva contraste durante el solapamiento. Las transiciones revierten desde su posición actual al invertir el scroll. Las pausas al 33% y 66%, la inversión con rueda y la salida durante inercia se comprueban en vídeo/pruebas.
 
-Se añadirán `gsap` (incluye ScrollTrigger) y `lenis` al crear la aplicación con su gestor elegido. No están instalados en este paquete de herramientas. No usar el paquete antiguo `@studio-freight/lenis`.
+Móvil/tableta: scroll nativo y tres actos verticales completos. Movimiento reducido: sin Lenis, pin, scrub o transformación del hero; cambios de preferencia en vivo. App siempre con scroll nativo. Sin autoplay.
 
-En público de escritorio desde 1200 px: una instancia Lenis con `autoRaf: false`, `lenis.on('scroll', ScrollTrigger.update)` y un solo ticker GSAP que llama `lenis.raf(time * 1000)`. No duplicar RAF ni combinar suavizadores. Recalcular tras fuentes, imágenes y composición; destruir instancia, ticker, timelines y listeners al cambiar de ruta o preferencia. Comprobar la API oficial antes de implementarlo.
+## Revisión
 
-| Elemento / rol | Inicio | Recorrido o duración | Movimiento / relación |
-| --- | --- | --- | --- |
-| Titular y CTA / estáticos | Primera carga | Siempre disponibles | Sin entrada que retrase lectura o interacción |
-| Panel del hero / protagonista | Scroll 0 px | Primeros 400 px de scroll | Escala .96→1, hasta 24 px; sin fijación |
-| Cinta / apoyo | Junto al panel | Mismo recorrido | Hasta 40 px por detrás; no cruza textos |
-| Situaciones / protagonista | Umbral 85% viewport | 450 ms | Opacidad y hasta 16 px; título y ejemplo solapados, desfase máximo 60 ms |
-| Método, acto 1 / protagonista | 0–33% | Una escena de 180% de altura de ventana | Frase: “Yesterday I go to the cinema”; etiqueta Demostración |
-| Método, acto 2 / protagonista | 34–66% | Mismo scrub | go→went y explicación visible; no depender del color |
-| Método, acto 3 / protagonista | 67–100% | Mismo scrub | Corrección→repaso; nueva pregunta y Practicar con mi voz |
-| Planes, FAQ, cierre / estáticos | Lectura normal | Sin espera | Salida al fondo cálido, sin destello ni pantalla completa |
+Emil aporta frecuencia apropiada, una entrada por objeto, propiedades baratas, interrupción y retroceso. Impeccable aporta portada editorial, app centrada en operar y documentos de lectura; auditoría, adaptación y pulido sobre capturas reales. Detector y pruebas se registran en docs/VALIDATION.md y evidence/app/.
 
-Solo la escena del método se fija si cabe íntegra en la altura útil, bajo el encabezado. Transiciones internas: opacidad, escala .98→1 y hasta 16 px. El retroceso devuelve el estado visual, sin guardar datos ni reiniciar audio. Sin snapping. Ocultos fuera del foco/árbol accesible según corresponda; enlaces Ver los pasos sin animación y Saltar a planes. Revisar anclas, historial y listas de diálogos.
+| Antes | Después | Por qué |
+| --- | --- | --- |
+| Dos CTA estrechos en móvil | Botones apilados con ancho disponible | Etiquetas completas y objetivos táctiles cómodos |
+| La superficie se desvanecía entre actos | Base blanca constante y entrada solapada, completa en .33/.66 | Evitar pausas con texto sin contraste |
+| Un gesto anterior podía desplazar un ancla | Destino inmediato en la instancia Lenis y foco al destino | La navegación interrumpe el movimiento |
+| Foco oscuro en el estudio | Anillo melocotón sobre tinta | Controles de audio y texto localizables con teclado |
 
-Móvil/tableta: scroll táctil nativo, sin pin/parallax, tres actos verticales completos; entradas opcionales 200–250 ms y hasta 8 px. Movimiento reducido: sin Lenis, pin, scrub ni parallax; todos los actos legibles, cambio inmediato o fundido corto. Responder también a cambios de preferencia durante la visita. App autenticada: scroll nativo y controles inmediatos, sin escenas durante la práctica.
+Veredicto: movimiento apto para revisar esta demo tras pruebas de ida/vuelta y preferencia reducida. El vídeo permite juzgar el relevo entre .27–.33 y .60–.66; no se declara una tasa de frames o métrica de rendimiento que no se haya medido.
 
-No animar acciones de teclado, micrófono, reproducción o navegación frecuente con retrasos. Botones 120–180 ms; paneles 220–300 ms; nada de `transition: all` ni `scale(0)`. Transform y opacidad por defecto. GSAP sigue utilizando el hilo principal: no afirmar que transform garantiza ejecución fuera de él. Medir antes de añadir `will-change`.
-
-## Aplicación de las skills y revisión posterior
-
-Se han leído los cuatro playbooks de Emil y el contexto/init de Impeccable para preparar estos criterios. `choreograph` aporta roles y solapamientos; `emil-design-eng`, frecuencia y respuesta; `animation-performance`, medición y propiedades; `review-animations`, revisión en tabla Before/After/Why cuando haya código. No hay aún animaciones de VERVO que aprobar.
-
-Impeccable: separar portada persuasiva, aplicación de operación y documentos de lectura. La revisión futura usará `critique`, `audit`, `adapt`, `optimize` y `polish` sobre interfaces ejecutándose. No se atribuyen auditorías ni puntuaciones a pantallas inexistentes.
-
-Validación futura: `docs/VALIDATION.md`; objetivos LCP ≤2.5 s, INP ≤200 ms, CLS ≤0.1 en p75 y latencia audible mediana experimental <2 s. Pendientes de medir con datos reales.
+WCAG 2.2 AA, Web Vitals p75 y latencia de voz siguen siendo objetivos de producción. La automatización no acredita hardware físico, Safari/iPhone real o aprendizaje.

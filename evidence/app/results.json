@@ -1,0 +1,565 @@
+{
+  "scope": "VERVO local demo, production build; prepared tutor, limited correction rules, local profile and simulated payments",
+  "stats": {
+    "startTime": "2026-11-13T01:56:55.407Z",
+    "duration": 78836.636,
+    "expected": 26,
+    "skipped": 6,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserVersions": {
+    "chromium": "158.0.8127.18",
+    "firefox": "159.0",
+    "webkit": "27.2"
+  },
+  "cases": [
+    {
+      "test": "recorrido completo, dos casillas independientes, corrección, repaso y persistencia",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 13504
+    },
+    {
+      "test": "recorrido completo, dos casillas independientes, corrección, repaso y persistencia",
+      "project": "chromium-mobile",
+      "status": "expected",
+      "durationMs": 9836
+    },
+    {
+      "test": "recorrido completo, dos casillas independientes, corrección, repaso y persistencia",
+      "project": "firefox-desktop",
+      "status": "expected",
+      "durationMs": 12901
+    },
+    {
+      "test": "recorrido completo, dos casillas independientes, corrección, repaso y persistencia",
+      "project": "webkit-desktop",
+      "status": "expected",
+      "durationMs": 9618
+    },
+    {
+      "test": "búsqueda, filtros, estados vacíos y páginas legales en móvil y escritorio",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 9667
+    },
+    {
+      "test": "búsqueda, filtros, estados vacíos y páginas legales en móvil y escritorio",
+      "project": "chromium-mobile",
+      "status": "expected",
+      "durationMs": 4836
+    },
+    {
+      "test": "búsqueda, filtros, estados vacíos y páginas legales en móvil y escritorio",
+      "project": "firefox-desktop",
+      "status": "expected",
+      "durationMs": 11336
+    },
+    {
+      "test": "búsqueda, filtros, estados vacíos y páginas legales en móvil y escritorio",
+      "project": "webkit-desktop",
+      "status": "expected",
+      "durationMs": 7224
+    },
+    {
+      "test": "recupera fallo simulado sin duplicar turnos y maneja micrófono denegado",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 5715
+    },
+    {
+      "test": "recupera fallo simulado sin duplicar turnos y maneja micrófono denegado",
+      "project": "chromium-mobile",
+      "status": "expected",
+      "durationMs": 3305
+    },
+    {
+      "test": "recupera fallo simulado sin duplicar turnos y maneja micrófono denegado",
+      "project": "firefox-desktop",
+      "status": "expected",
+      "durationMs": 8364
+    },
+    {
+      "test": "recupera fallo simulado sin duplicar turnos y maneja micrófono denegado",
+      "project": "webkit-desktop",
+      "status": "expected",
+      "durationMs": 4719
+    },
+    {
+      "test": "pago pendiente no activa plan y eliminación de datos requiere confirmación",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 7082
+    },
+    {
+      "test": "pago pendiente no activa plan y eliminación de datos requiere confirmación",
+      "project": "chromium-mobile",
+      "status": "expected",
+      "durationMs": 2931
+    },
+    {
+      "test": "pago pendiente no activa plan y eliminación de datos requiere confirmación",
+      "project": "firefox-desktop",
+      "status": "expected",
+      "durationMs": 6214
+    },
+    {
+      "test": "pago pendiente no activa plan y eliminación de datos requiere confirmación",
+      "project": "webkit-desktop",
+      "status": "expected",
+      "durationMs": 4537
+    },
+    {
+      "test": "movimiento reducido, cambio en vivo y limpieza al navegar",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 3382
+    },
+    {
+      "test": "movimiento reducido, cambio en vivo y limpieza al navegar",
+      "project": "chromium-mobile",
+      "status": "expected",
+      "durationMs": 521
+    },
+    {
+      "test": "movimiento reducido, cambio en vivo y limpieza al navegar",
+      "project": "firefox-desktop",
+      "status": "expected",
+      "durationMs": 2772
+    },
+    {
+      "test": "movimiento reducido, cambio en vivo y limpieza al navegar",
+      "project": "webkit-desktop",
+      "status": "expected",
+      "durationMs": 2508
+    },
+    {
+      "test": "scroll continuo, reversible, sin guardar datos y con vídeo de Chromium",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 15203
+    },
+    {
+      "test": "scroll continuo, reversible, sin guardar datos y con vídeo de Chromium",
+      "project": "chromium-mobile",
+      "status": "skipped",
+      "durationMs": 2
+    },
+    {
+      "test": "scroll continuo, reversible, sin guardar datos y con vídeo de Chromium",
+      "project": "firefox-desktop",
+      "status": "expected",
+      "durationMs": 7607
+    },
+    {
+      "test": "scroll continuo, reversible, sin guardar datos y con vídeo de Chromium",
+      "project": "webkit-desktop",
+      "status": "expected",
+      "durationMs": 6655
+    },
+    {
+      "test": "accesibilidad automática y enlace de salto con teclado",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 20200
+    },
+    {
+      "test": "accesibilidad automática y enlace de salto con teclado",
+      "project": "chromium-mobile",
+      "status": "expected",
+      "durationMs": 11111
+    },
+    {
+      "test": "accesibilidad automática y enlace de salto con teclado",
+      "project": "firefox-desktop",
+      "status": "skipped",
+      "durationMs": 679
+    },
+    {
+      "test": "accesibilidad automática y enlace de salto con teclado",
+      "project": "webkit-desktop",
+      "status": "skipped",
+      "durationMs": 591
+    },
+    {
+      "test": "grabación con señal Web Audio, conservación elegida y borrado de audio",
+      "project": "chromium-desktop",
+      "status": "expected",
+      "durationMs": 6825
+    },
+    {
+      "test": "grabación con señal Web Audio, conservación elegida y borrado de audio",
+      "project": "chromium-mobile",
+      "status": "skipped",
+      "durationMs": 153
+    },
+    {
+      "test": "grabación con señal Web Audio, conservación elegida y borrado de audio",
+      "project": "firefox-desktop",
+      "status": "skipped",
+      "durationMs": 793
+    },
+    {
+      "test": "grabación con señal Web Audio, conservación elegida y borrado de audio",
+      "project": "webkit-desktop",
+      "status": "skipped",
+      "durationMs": 376
+    }
+  ],
+  "accessibility": {
+    "chromium-desktop": [
+      {
+        "route": "/",
+        "violations": 0
+      },
+      {
+        "route": "/#/acceso",
+        "violations": 0
+      },
+      {
+        "route": "/#/privacidad",
+        "violations": 0
+      },
+      {
+        "route": "/#/app",
+        "violations": 0
+      },
+      {
+        "route": "/#/app/conversaciones",
+        "violations": 0
+      },
+      {
+        "route": "/#/app/cuenta",
+        "violations": 0
+      }
+    ],
+    "chromium-mobile": [
+      {
+        "route": "/",
+        "violations": 0
+      },
+      {
+        "route": "/#/acceso",
+        "violations": 0
+      },
+      {
+        "route": "/#/privacidad",
+        "violations": 0
+      },
+      {
+        "route": "/#/app",
+        "violations": 0
+      },
+      {
+        "route": "/#/app/conversaciones",
+        "violations": 0
+      },
+      {
+        "route": "/#/app/cuenta",
+        "violations": 0
+      }
+    ]
+  },
+  "impeccableSourceDetector": [],
+  "audio": "Synthetic Web Audio stream supplied in the test to real MediaRecorder; no physical microphone, STT or AI tested",
+  "files": {
+    "acceso-chromium-desktop.png": {
+      "bytes": 94255,
+      "sha256": "796ec1e9cc7a6c2f64351e28cec6d3b460717ad6b942ab61f5f6847dcf1f4f0c",
+      "width": 1440,
+      "height": 1000
+    },
+    "acceso-chromium-mobile.png": {
+      "bytes": 63138,
+      "sha256": "e8e117c6b5a94a2fbb908afd4fe0bce4c0868b6233b38ed9b1313317269ba480",
+      "width": 390,
+      "height": 1334
+    },
+    "acceso-firefox-desktop.png": {
+      "bytes": 132034,
+      "sha256": "5a2547ffccff65f7985fcded9052c6dd51f18f2f72d2c52d104a375f6cabafb1",
+      "width": 1440,
+      "height": 1000
+    },
+    "acceso-webkit-desktop.png": {
+      "bytes": 128332,
+      "sha256": "09842a74642b941ff096f7c34778ebadb70152d6452804d3cb453438e5e83924",
+      "width": 1440,
+      "height": 1000
+    },
+    "conversaciones-chromium-desktop.png": {
+      "bytes": 327403,
+      "sha256": "c0021adca96ecbcc4ad7347cb49e8699b12a2413d5378f3277b73a97833d4722",
+      "width": 1440,
+      "height": 3546
+    },
+    "conversaciones-chromium-mobile.png": {
+      "bytes": 459477,
+      "sha256": "791d8c686476eaf0891ab4387f1e3a173b7515a96af51f4bdfa9add85fa00c80",
+      "width": 390,
+      "height": 9383
+    },
+    "conversaciones-firefox-desktop.png": {
+      "bytes": 567384,
+      "sha256": "a7f5f1f20b05a78c85efbe48ca6b8360d88e5dfac5b7f6dff72bdbd9bbb2273c",
+      "width": 1440,
+      "height": 3547
+    },
+    "conversaciones-webkit-desktop.png": {
+      "bytes": 556393,
+      "sha256": "78108430cc2a6b7e766dcc84bf22473bf85f501b0f155a2e54716229afe6fdac",
+      "width": 1440,
+      "height": 3546
+    },
+    "cuenta-chromium-desktop.png": {
+      "bytes": 9418,
+      "sha256": "a6907a89ba97a007a655db70425be3a3e8d8f15209d2c255217b1f1eea6afc9a",
+      "width": 1440,
+      "height": 1000
+    },
+    "cuenta-chromium-mobile.png": {
+      "bytes": 5529,
+      "sha256": "b1e1ae33ae6c67ddb5ca14a225f9893efde21a5338a515d148091cb41a1ca584",
+      "width": 390,
+      "height": 844
+    },
+    "cuenta-firefox-desktop.png": {
+      "bytes": 11382,
+      "sha256": "cb1243c88131455ebe2d3fb5bd02d84836adb8b59e46b20aec47c13e2ef9b2cb",
+      "width": 1440,
+      "height": 1000
+    },
+    "cuenta-webkit-desktop.png": {
+      "bytes": 11734,
+      "sha256": "f8cc9a02a429c88abfaaca01369adc5675d6665aac0b2e53cb52e8616fddb704",
+      "width": 1440,
+      "height": 1000
+    },
+    "hoy-chromium-desktop.png": {
+      "bytes": 145816,
+      "sha256": "02c5a49ee4bab03076f1fe833c8db784f170d3f6ca1b8f3bdd08d638df48f71e",
+      "width": 1440,
+      "height": 1327
+    },
+    "hoy-chromium-mobile.png": {
+      "bytes": 99318,
+      "sha256": "ff3e689be0642ba79b375e55282c7096fc0067c0601551f51516ba11a4b040a3",
+      "width": 390,
+      "height": 1896
+    },
+    "hoy-firefox-desktop.png": {
+      "bytes": 200336,
+      "sha256": "80059798b7a39fe21bd16ce2cdc6e63eec6f5e966e2081ab07595c986d048497",
+      "width": 1440,
+      "height": 1327
+    },
+    "hoy-webkit-desktop.png": {
+      "bytes": 194305,
+      "sha256": "2eeda3ca94d29518c5010b86a9ac1fc733aebf7e41483cdf4a74f224ea699eeb",
+      "width": 1440,
+      "height": 1327
+    },
+    "inicio-chromium-desktop.png": {
+      "bytes": 117354,
+      "sha256": "f513966568e70976f701b26fe5162f755cc7b811174da456b4255aeba4b69de2",
+      "width": 1440,
+      "height": 1000
+    },
+    "inicio-chromium-mobile.png": {
+      "bytes": 51827,
+      "sha256": "87675b66139e6e129fb25e96d44ea7b3d4b511aeae79c572b996264a9e5c75f1",
+      "width": 390,
+      "height": 844
+    },
+    "inicio-firefox-desktop.png": {
+      "bytes": 161268,
+      "sha256": "de721645b5b5ede8b5a549fac06bc77a01798cd078e4d66b4ef554a1099176b6",
+      "width": 1440,
+      "height": 1000
+    },
+    "inicio-webkit-desktop.png": {
+      "bytes": 156755,
+      "sha256": "7430210989d731c575cb21d4d5a71f6d67003a581273687bd171ef61ec0c51b4",
+      "width": 1440,
+      "height": 1000
+    },
+    "progreso-chromium-desktop.png": {
+      "bytes": 99725,
+      "sha256": "c89648e618e2b7d84f31f203ae1644ead844f96c02292eceee14bb376f7d78ae",
+      "width": 1440,
+      "height": 1166
+    },
+    "progreso-chromium-mobile.png": {
+      "bytes": 77699,
+      "sha256": "380ca3177a76f6586235336aa1603a5322d261b295e14da21e52b176f2fec46c",
+      "width": 390,
+      "height": 1538
+    },
+    "progreso-firefox-desktop.png": {
+      "bytes": 147498,
+      "sha256": "07a82e9a898857123bf96682d1cc1c9d19292db095289e705825e22137f1ea68",
+      "width": 1440,
+      "height": 1165
+    },
+    "progreso-webkit-desktop.png": {
+      "bytes": 141287,
+      "sha256": "2e667ce866b1bc194b8741bda3dbedebb64a8e3ff06deaee4211750984d70ea2",
+      "width": 1440,
+      "height": 1165
+    },
+    "repaso-chromium-desktop.png": {
+      "bytes": 80686,
+      "sha256": "47d1a10f5bfd5a25f39c5d6a678ee3851951431a5289cd77b4225e777c05fcc2",
+      "width": 1440,
+      "height": 1000
+    },
+    "repaso-chromium-mobile.png": {
+      "bytes": 58775,
+      "sha256": "65082790c1190cab9799f96a3c29e8fdde4f394774f2a07b97dd48720a63024d",
+      "width": 390,
+      "height": 1076
+    },
+    "repaso-firefox-desktop.png": {
+      "bytes": 107870,
+      "sha256": "4631e39b99c22bc1575fcd97b24d51ae926b7aa040ed31baae2ac8dcb66d6fcb",
+      "width": 1440,
+      "height": 1000
+    },
+    "repaso-webkit-desktop.png": {
+      "bytes": 103646,
+      "sha256": "4ce0ec2c94ded41d6b9aa5621b3d1a4b8b042016e05e0b0e95a28e0993dd004b",
+      "width": 1440,
+      "height": 1000
+    },
+    "revision-chromium-desktop.png": {
+      "bytes": 118158,
+      "sha256": "1f6bc6deb51448ec9ad0bbad6b355e266256af5b3b38092cbdc28fc92be47beb",
+      "width": 1440,
+      "height": 1289
+    },
+    "revision-chromium-mobile.png": {
+      "bytes": 95240,
+      "sha256": "7dc902bac0982531eba3649cd4489a2f909e209a0fc9440abdc8e617213c8619",
+      "width": 390,
+      "height": 1805
+    },
+    "revision-firefox-desktop.png": {
+      "bytes": 161519,
+      "sha256": "d56b19e7dbe9bc8a42c345089d2524fd09a3f7b76f96b1326d3a9a9401170d64",
+      "width": 1440,
+      "height": 1289
+    },
+    "revision-webkit-desktop.png": {
+      "bytes": 159932,
+      "sha256": "1f3fbc310afb7a5a9b520ec281b268642035a216bfbc190a5e3cddf179e5d1ff",
+      "width": 1440,
+      "height": 1289
+    },
+    "scroll-0-chromium-desktop.png": {
+      "bytes": 61145,
+      "sha256": "feb9c48357aa1daca94fbb6508621c731211cbabc9fba33d27f03255a16f77a1",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-0-firefox-desktop.png": {
+      "bytes": 86115,
+      "sha256": "454cf1ae09d6809a9399c97dd0ada16c92b5ef3573aacea1030c8ebbcf7cfd1a",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-0-webkit-desktop.png": {
+      "bytes": 81653,
+      "sha256": "15bf4db70bffd10cc409040ccc78874a3f5cdb0313e42cdd9eff20ae2cd24e32",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-100-chromium-desktop.png": {
+      "bytes": 87313,
+      "sha256": "5ca6d4b9677b32108f2d1f425152ad4a11fb6575c43dc0676e10524a350b9594",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-100-firefox-desktop.png": {
+      "bytes": 119788,
+      "sha256": "16de61a305d595a3e558f97382b085309f8c119081f5cda13f993238ff6add7f",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-100-webkit-desktop.png": {
+      "bytes": 115323,
+      "sha256": "f1189728672fe96b94f177e3a2d07612d74fc9f6836ec54b4ab5bdbb0012533e",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-33-chromium-desktop.png": {
+      "bytes": 69998,
+      "sha256": "872226f31bbcd00ef45413c46d46ad8fc28febad150d5de8e122d051db18089f",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-33-firefox-desktop.png": {
+      "bytes": 94460,
+      "sha256": "9f14f9f048b3b8f4dddff2815a44977bd24ee491ea93908acf796bbcca800e8c",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-33-webkit-desktop.png": {
+      "bytes": 89988,
+      "sha256": "35b4e1f13abdb3485e0a7318b54c85ccd5c80ece2f39361289181b62d3a2990e",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-66-chromium-desktop.png": {
+      "bytes": 72008,
+      "sha256": "7a3d274b77860abd03abf23ff895f86cf2fa7d26f314a59a27b42fa77b109fd4",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-66-firefox-desktop.png": {
+      "bytes": 99258,
+      "sha256": "20fe986a3f67a706dfb26f22ae96f0284e1bae8f42c605a2d9abbaa7599260a1",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-66-webkit-desktop.png": {
+      "bytes": 95144,
+      "sha256": "37dc225051e7fb59daf384805a91ad739a2b5c1336520c17d0fea0dbbfa7becf",
+      "width": 1440,
+      "height": 1000
+    },
+    "scroll-ida-vuelta.webm": {
+      "bytes": 2113896,
+      "sha256": "772611d7d451cbc63b59ee5b5cb56a2095609736429c1c5df6d9f626f67391bd"
+    },
+    "sesion-chromium-desktop.png": {
+      "bytes": 91402,
+      "sha256": "32c1793e3403e7029533fa494abc674b0a38a30f3695b1a6c720da2131bc85dd",
+      "width": 1440,
+      "height": 1000
+    },
+    "sesion-chromium-mobile.png": {
+      "bytes": 45034,
+      "sha256": "d2e537475df3f8019e6b590f13ba1487c9d9e08bce01b38a8d72f23ad4459871",
+      "width": 390,
+      "height": 844
+    },
+    "sesion-firefox-desktop.png": {
+      "bytes": 125031,
+      "sha256": "c71f4893d9bd48be1d84f3a340af0c125519ae03e5fa250f9597fa5558105cd6",
+      "width": 1440,
+      "height": 1000
+    },
+    "sesion-webkit-desktop.png": {
+      "bytes": 121709,
+      "sha256": "f128f5a9dabce6047557e8aa82ba3b9faf4daa8bedf214fc591ffe3e6e3e8fb4",
+      "width": 1440,
+      "height": 1000
+    }
+  },
+  "limits": [
+    "No real authentication, AI, STT, remote TTS, backend or payments",
+    "No physical microphone or actual Safari/iPhone",
+    "No full WCAG certification, p75 web metrics, frame profile or user/pedagogical study"
+  ]
+}

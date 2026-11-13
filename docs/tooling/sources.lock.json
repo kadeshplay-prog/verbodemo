@@ -97,7 +97,8 @@
   ],
   "projectReferences": {
     "docs/references/Brief_Visual_Contenido_VERVO.pdf": "eeaa5d2b28c60ebd197d5073f24e1a0a5ea80e37c640b7db15215b248953bd09",
-    "docs/references/Brief_Visual_Contenido_VERVO.txt": "65755d4a52e78eec1c46e081f699109c9a11f4367c8340e4f25fc09d0eae431f"
+    "docs/references/Brief_Visual_Contenido_VERVO.txt": "65755d4a52e78eec1c46e081f699109c9a11f4367c8340e4f25fc09d0eae431f",
+    "docs/references/DESIGN.md": "77baec6b45db51d2ec9750e6c7138ad8b993269ead09b54c0e7980840352a1fe"
   },
   "engine": {
     "version": "0.1.21",
@@ -106,12 +107,14 @@
     "tracked": false,
     "restore": "npm run tools:prepare"
   },
-  "missingUserReference": {
-    "status": "not_received",
-    "originalFilename": null
-  },
   "figma": {
     "status": "deferred_by_user",
     "fileAccessVerified": false
+  },
+  "userReference": {
+    "status": "received",
+    "originalFilename": "DESIGN.md",
+    "path": "docs/references/DESIGN.md",
+    "sha256": "77baec6b45db51d2ec9750e6c7138ad8b993269ead09b54c0e7980840352a1fe"
   }
 }
