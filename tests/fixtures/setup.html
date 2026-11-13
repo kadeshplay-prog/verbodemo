@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Comprobación del entorno</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; color: #202020; background: #fff; font: 18px/1.6 system-ui, sans-serif; }
+    main { max-width: 720px; margin: 32px auto; }
+    h1 { font-size: clamp(28px, 6vw, 40px); line-height: 1.2; }
+    button { min-height: 48px; padding: 10px 18px; font: inherit; cursor: pointer; }
+    :focus-visible { outline: 3px solid #005fcc; outline-offset: 4px; }
+    #result { min-height: 60px; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <p>Prueba técnica · Fase de preparación</p>
+    <h1>Comprobación del entorno</h1>
+    <p>Esta página verifica que el navegador abre, ejecuta JavaScript y genera capturas. No es una pantalla ni una propuesta de diseño de VERVO.</p>
+    <button type="button" id="check">Comprobar interacción</button>
+    <p role="status" id="result">Pendiente de comprobar.</p>
+    <p>No solicita datos, permisos de micrófono ni pagos. No instala cookies ni analítica.</p>
+  </main>
+  <script>
+    document.querySelector('#check').addEventListener('click', () => {
+      document.querySelector('#result').textContent = 'Interacción comprobada.';
+    });
+  </script>
+</body>
+</html>

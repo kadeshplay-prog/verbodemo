@@ -1,0 +1,26 @@
+node_modules/
+dist/
+work/
+.cache/
+.env
+.env.*
+!.env.example
+.DS_Store
+.claude/settings.local.json
+.claude/skills/impeccable/scripts/bin/
+playwright-report/
+test-results/
+# Navegadores, binarios y cachés se reinstalan dentro de work/.
+# Las skills y sus recursos de texto sí se conservan en Git.
+**/.impeccable/config.local.json
+**/.impeccable/hook.cache.json
+**/.impeccable/hook.pending.json
+**/.impeccable/*.png
+**/.impeccable/review/
+**/.impeccable/questions/
+**/.impeccable/live/server.json
+**/.impeccable/live/sessions/
+**/.impeccable/live/previews/
+**/.impeccable/live/annotations/
+**/.impeccable/live/cache/
+**/.impeccable/live/*.png

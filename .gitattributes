@@ -1,0 +1,14 @@
+* text=auto
+*.mjs text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.py text eol=lf
+*.html text eol=lf
+*.pdf binary
+*.png binary
+# Conservar exactamente las copias oficiales y la transcripción original.
+.claude/skills/** -text -whitespace
+.claude/agents/** -text -whitespace
+third_party/** -text -whitespace
+docs/references/*.txt -text -whitespace
+docs/references/DESIGN.md -text -whitespace
